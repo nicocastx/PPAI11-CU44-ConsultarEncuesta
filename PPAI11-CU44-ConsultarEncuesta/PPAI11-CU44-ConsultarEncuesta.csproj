@@ -47,12 +47,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\BD.cs" />
+    <Compile Include="Entidades\CambioEstado.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Encuesta.cs" />
+    <Compile Include="Entidades\Estado.cs" />
+    <Compile Include="Entidades\Llamada.cs" />
+    <Compile Include="Entidades\Pregunta.cs" />
+    <Compile Include="Entidades\RespuestaDeCliente.cs" />
+    <Compile Include="Entidades\RespuestaPosible.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestor\GestorConsultarEncuesta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,8 +87,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entidades\" />
-    <Folder Include="Gestor\" />
     <Folder Include="Interfaz\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
