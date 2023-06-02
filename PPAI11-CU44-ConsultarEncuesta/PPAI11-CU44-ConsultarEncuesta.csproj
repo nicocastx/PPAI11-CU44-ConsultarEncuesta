@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarEncuesta.Designer.cs">
+      <DependentUpon>ConsultarEncuesta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datos\BD.cs" />
     <Compile Include="Entidades\CambioEstado.cs" />
     <Compile Include="Entidades\Cliente.cs" />
@@ -55,15 +61,21 @@
     <Compile Include="Entidades\Pregunta.cs" />
     <Compile Include="Entidades\RespuestaDeCliente.cs" />
     <Compile Include="Entidades\RespuestaPosible.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestor\GestorConsultarEncuesta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConsultarEncuesta.resx">
+      <DependentUpon>ConsultarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaz\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_encuesta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

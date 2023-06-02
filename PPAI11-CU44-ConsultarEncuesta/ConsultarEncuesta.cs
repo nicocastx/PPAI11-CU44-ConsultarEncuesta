@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace PPAI11_CU44_ConsultarEncuesta
 {
-    public partial class Form1 : Form
+    public partial class ConsultarEncuesta : Form
     {
-        public Form1()
+        public ConsultarEncuesta()
         {
             InitializeComponent();
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
