@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
-    internal class RespuestaDeCliente
+
+    public class RespuestaDeCliente
     {
+        public readonly RespuestaPosible respuestaPosible;
+        public DateTime FechaEncuesta { get; set; }
+
+        public string getDescripcionRta()
+        {
+            return respuestaPosible.getDescripcionRta();
+        }
     }
 }
