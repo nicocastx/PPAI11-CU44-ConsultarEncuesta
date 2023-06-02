@@ -8,11 +8,16 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
     internal class Estado
     {
-        public string Nombre { get; set; }
+        public string nombre { get; set; }
+
+        public Estado(string nombre)
+        {
+            this.nombre = nombre;
+        }
 
         public bool esIniciada()
         {
-            if(this.Nombre == "Iniciada")
+            if(this.nombre == "Iniciada")
             {
                 return true;
             }

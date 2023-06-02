@@ -10,7 +10,13 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
     public class RespuestaDeCliente
     {
         public readonly RespuestaPosible respuestaPosible;
-        public DateTime FechaEncuesta { get; set; }
+        public DateTime fechaEncuesta { get; set; }
+
+        public RespuestaDeCliente(RespuestaPosible respuestaPosible, DateTime fechaEncuesta)
+        {
+            this.respuestaPosible = respuestaPosible;
+            this.fechaEncuesta = fechaEncuesta;
+        }
 
         public string getDescripcionRta()
         {

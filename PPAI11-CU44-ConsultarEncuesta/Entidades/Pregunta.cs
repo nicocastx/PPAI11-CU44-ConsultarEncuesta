@@ -8,5 +8,17 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
     internal class Pregunta
     {
+        public string descripcion { get; set; }
+
+        //Constructor
+        public Pregunta(string descripcion)
+        {
+            this.descripcion = descripcion;
+        }
+
+        internal string getDescripcion()
+        {
+            return this.descripcion;
+        }
     }
 }

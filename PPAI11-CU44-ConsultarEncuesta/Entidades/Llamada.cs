@@ -8,15 +8,27 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
     internal class Llamada
     {
-        public string DescripcionOperador { get; set; }
-        public string DetalleAccionRequerida { get; set; }
-        public int Duracion { get; set; }
-        public string EncuestaEnviada { get; set; }
-        public string ObservacionAuditor { get; set; }
-        public List<RespuestaDeCliente> RespuestasDeCliente { get; set; }
-        public List<CambioEstado> CambioEstado { get; set; }
-        public Cliente Cliente { get; set; }
-        
+        public string descripcionOperador { get; set; }
+        public string detalleAccionRequerida { get; set; }
+        public int duracion { get; set; }
+        public string encuestaEnviada { get; set; }
+        public string observacionAuditor { get; set; }
+        public List<RespuestaDeCliente> respuestasDeCliente { get; set; }
+        public List<CambioEstado> cambioEstado { get; set; }
+        public Cliente cliente { get; set; }
+
+        /*Constructor*/
+        public Llamada(string descripcionOperador, string detalleAccionRequerida, int duracion, string encuestaEnviada, string observacionAuditor, List<RespuestaDeCliente> respuestasDeCliente, List<CambioEstado> cambioEstado, Cliente cliente)
+        {
+            this.descripcionOperador = descripcionOperador;
+            this.detalleAccionRequerida = detalleAccionRequerida;
+            this.duracion = duracion;
+            this.encuestaEnviada = encuestaEnviada;
+            this.observacionAuditor = observacionAuditor;
+            this.respuestasDeCliente = respuestasDeCliente;
+            this.cambioEstado = cambioEstado;
+            this.cliente = cliente;
+        }
 
         //!Verificar ESDEPERIODO
         public bool EsDePeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
@@ -26,19 +38,19 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 
         public string getNombreClienteDeLlamada()
         {
-            return this.Cliente.NombreCompleto;
+            return this.cliente.NombreCompleto;
         }
 
         //!IMPLEMENTAR getRespuestas
         public List<RespuestaDeCliente> getRespuestas()
         {
-            return this.RespuestasDeCliente;
+            return this.respuestasDeCliente;
         }
 
         //Verificar EXISTENRESPUESTAS
         public bool ExistenRespuestas()
         {
-            if(this.RespuestasDeCliente.Count <= 0)
+            if(this.respuestasDeCliente.Count <= 0)
             {
                 return false;
             }
