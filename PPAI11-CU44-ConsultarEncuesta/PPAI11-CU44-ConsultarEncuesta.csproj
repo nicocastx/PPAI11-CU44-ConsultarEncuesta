@@ -53,6 +53,12 @@
       <DependentUpon>ConsultarEncuesta.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\BD.cs" />
+    <Compile Include="EncuestaCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EncuestaCSV.Designer.cs">
+      <DependentUpon>EncuestaCSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\CambioEstado.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Encuesta.cs" />
@@ -72,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConsultarEncuesta.resx">
       <DependentUpon>ConsultarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EncuestaCSV.resx">
+      <DependentUpon>EncuestaCSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -107,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_csv.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

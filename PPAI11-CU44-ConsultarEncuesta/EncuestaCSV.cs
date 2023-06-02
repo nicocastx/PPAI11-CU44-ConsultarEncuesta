@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PPAI11_CU44_ConsultarEncuesta
 {
-    public partial class ConsultarEncuesta : Form
+    public partial class EncuestaCSV : Form
     {
-        public ConsultarEncuesta()
+        public EncuestaCSV()
         {
             InitializeComponent();
         }
@@ -20,17 +20,6 @@ namespace PPAI11_CU44_ConsultarEncuesta
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
-        }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void BtnCSV_Click(object sender, EventArgs e)
-        {
-            EncuestaCSV encuestaCSV = new EncuestaCSV();
-            encuestaCSV.Show();
         }
     }
 }
