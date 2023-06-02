@@ -174,6 +174,7 @@
             this.BtnCSV.TabIndex = 5;
             this.BtnCSV.Text = "Generar CSV";
             this.BtnCSV.UseVisualStyleBackColor = false;
+            this.BtnCSV.Click += new System.EventHandler(this.BtnCSV_Click);
             // 
             // LblFechaInicio
             // 
