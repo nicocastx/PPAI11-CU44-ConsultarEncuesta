@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
-    internal class Estado
+    public class Estado
     {
         public string nombre { get; set; }
 

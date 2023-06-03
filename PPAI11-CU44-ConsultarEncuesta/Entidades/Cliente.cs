@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
-    internal class Cliente
+    public class Cliente
     {
         public int Dni { get; set; }
         public string NombreCompleto { get; set; }

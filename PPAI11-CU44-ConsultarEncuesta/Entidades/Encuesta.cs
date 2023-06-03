@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
-    internal class Encuesta
+    public class Encuesta
     {
         public string descripcion { get; set; }
 
         public DateTime fechaFinVigencia { get; set; }
 
+        public List<Pregunta> pregunta { get; set; }
+
         //Constructor
-        public Encuesta(string descripcion, DateTime fechaFinVigencia)
+        public Encuesta(string descripcion, DateTime fechaFinVigencia, List<Pregunta> pregunta)
         {
             this.descripcion = descripcion;
             this.fechaFinVigencia = fechaFinVigencia;
+            this.pregunta = pregunta;
         }
 
         internal string getDescripcionEncuesta()
