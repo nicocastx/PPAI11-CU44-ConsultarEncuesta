@@ -14,7 +14,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 
         public List<Pregunta> pregunta { get; set; }
 
-        //Constructor
+        //Constructor kevin wachin
         public Encuesta(string descripcion, DateTime fechaFinVigencia, List<Pregunta> pregunta)
         {
             this.descripcion = descripcion;

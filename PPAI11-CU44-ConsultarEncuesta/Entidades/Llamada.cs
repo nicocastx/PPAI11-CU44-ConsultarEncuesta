@@ -13,11 +13,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         public int duracion { get; set; }
         public bool encuestaEnviada { get; set; }
         public string observacionAuditor { get; set; }
-        public List<RespuestaDeCliente> respuestaDeEncuesta { get; set; }
+        public List<RespuestaDeCliente> respuestasDeEncuesta { get; set; }
         public List<CambioEstado> cambioEstado { get; set; }
         public Cliente cliente { get; set; }
 
-        /*Constructor*/
+        /*Constructor kevin gil*/
         public Llamada(string descripcionOperador, string detalleAccionRequerida, int duracion, bool encuestaEnviada, string observacionAuditor, List<RespuestaDeCliente> respuestasDeCliente, List<CambioEstado> cambioEstado, Cliente cliente)
         {
             this.descripcionOperador = descripcionOperador;
@@ -25,7 +25,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             this.duracion = duracion;
             this.encuestaEnviada = encuestaEnviada;
             this.observacionAuditor = observacionAuditor;
-            this.respuestaDeEncuesta = respuestasDeCliente;
+            this.respuestasDeEncuesta = respuestasDeCliente;
             this.cambioEstado = cambioEstado;
             this.cliente = cliente;
         }

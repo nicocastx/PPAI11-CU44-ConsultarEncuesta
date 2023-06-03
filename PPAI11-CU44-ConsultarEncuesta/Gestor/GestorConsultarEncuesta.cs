@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 {
-    internal class GestorConsultarEncuesta
+    public class GestorConsultarEncuesta
     {
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }

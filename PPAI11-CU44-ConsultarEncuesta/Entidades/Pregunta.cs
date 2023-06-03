@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
@@ -12,16 +8,22 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 
         public List<RespuestaPosible> respuesta { get; set; }
 
-        //Constructor 
+        //Constructor tito gato
         public Pregunta(string descripcion, List<RespuestaPosible> respuestaPosible)
         {
             this.descripcion = descripcion;
             this.respuesta = respuestaPosible;
         }
 
-        internal string getDescripcion()
+        public string getDescripcion()
         {
             return this.descripcion;
         }
+
+        public List<RespuestaPosible> getRespuestasPosibles()
+        {
+            return this.respuesta;
+        }
+
     }
 }
