@@ -17,8 +17,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         public List<CambioEstado> cambioEstado { get; set; }
         public Cliente cliente { get; set; }
 
-        /*Constructor kevin gil*/
-        public Llamada(string descripcionOperador, string detalleAccionRequerida, int duracion, bool encuestaEnviada, string observacionAuditor, List<RespuestaDeCliente> respuestasDeCliente, List<CambioEstado> cambioEstado, Cliente cliente)
+        /*Constructor */
+        public Llamada(string descripcionOperador, string detalleAccionRequerida, bool encuestaEnviada, string observacionAuditor, List<RespuestaDeCliente> respuestasDeCliente, List<CambioEstado> cambioEstado, Cliente cliente)
         {
             this.descripcionOperador = descripcionOperador;
             this.detalleAccionRequerida = detalleAccionRequerida;
@@ -33,14 +33,14 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         //!Verificar ESDEPERIODO
         public bool EsDePeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
-            for(var i = 0; i < cambioEstado.Count; i++)
+            for (var i = 0; i < cambioEstado.Count; i++)
             {
                 if (cambioEstado[i].esEstadoInicial())
                 {
                     if (cambioEstado[i].FechaHoraInicio < fechaFinPeriodo && cambioEstado[i].FechaHoraInicio > fechaInicioPeriodo)
                     {
                         return true;
-                    } 
+                    }
                 }
             }
             return false;
@@ -48,15 +48,23 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 
         public int calcularDuracion()
         {
+            DateTime fechaHoraInicio = new DateTime();
+            DateTime fechaHoraFin = new DateTime();
             for (var i = 0; i < cambioEstado.Count; i++)
             {
-                fechaHoraInicio = 
                 if (cambioEstado[i].esEstadoInicial())
                 {
-                    
+                    fechaHoraInicio = cambioEstado[i].FechaHoraInicio;
+                } else if (cambioEstado[i].esEstadoFinal())
+                {
+                    fechaHoraFin = cambioEstado[i].FechaHoraInicio;
                 }
             }
-            return false;
+
+            TimeSpan diferencia = fechaHoraInicio.Subtract(fechaHoraFin);
+
+            int minutos = (int)diferencia.TotalMinutes;
+            return minutos;
         }
         public string getNombreClienteDeLlamada()
         {
@@ -66,13 +74,13 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         //!IMPLEMENTAR getRespuestas
         public List<RespuestaDeCliente> getRespuestas()
         {
-            return this.respuestasDeCliente;
+            return this.respuestasDeEncuesta;
         }
 
         //Verificar EXISTENRESPUESTAS
         public bool ExistenRespuestas()
         {
-            if(this.respuestasDeCliente.Count <= 0)
+            if (this.respuestasDeEncuesta.Count <= 0)
             {
                 return false;
             }

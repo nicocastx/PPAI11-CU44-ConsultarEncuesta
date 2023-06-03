@@ -10,9 +10,12 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
         public static List<Cliente> ListaClientes()
         {
             List<Cliente> listaClientes = new List<Cliente>();
-            Cliente clienteUno = new Cliente(Dni: 23123133,NombreCompleto: "asd", NroCelular: 231123123);
-            Cliente clienteDos = new Cliente(Dni: 23123133, NombreCompleto: "asd", NroCelular: 231123123);
+            Cliente clienteUno = new Cliente(Dni: 23123135, NombreCompleto: "Tito Pig", NroCelular: 351674823);
+            Cliente clienteDos = new Cliente(Dni: 23123133, NombreCompleto: "Kevin Gil", NroCelular: 351658402);
+            Cliente clienteTres = new Cliente(Dni: 23123137, NombreCompleto: "Isma Gatto", NroCelular: 351090232);
             listaClientes.Add(clienteUno);
+            listaClientes.Add(clienteDos);
+            listaClientes.Add(clienteTres);
 
             return listaClientes;
         }
@@ -126,7 +129,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             //LISTAS PARA RESPUESTAS DE CLIENTES DE LLAMADAS
 
             List<RespuestaDeCliente> listaRespuestasC1 = new List<RespuestaDeCliente>();
-            List<RespuestaDeCliente> listaRespuestasC2= new List<RespuestaDeCliente>();
+            List<RespuestaDeCliente> listaRespuestasC2 = new List<RespuestaDeCliente>();
 
             //RESPUESTAS DE CLIENTES
 
@@ -146,10 +149,38 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             listaRespuestasC1.Add(respuesta2C2);
             listaRespuestasC1.Add(respuesta3C2);
 
-            Llamada llamada1 = new Llamada(descripcionOperador: "Esta es una descripcion del operador", detalleAccionRequerida: "Esta es una descripcion de una accion requerida", duracion: , observacionAuditor:,);
+            Llamada llamada1 = new Llamada(
+                descripcionOperador: "Esta es una descripcion del operador",
+                detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
+                observacionAuditor: "Cualquier Cosa",
+                respuestasDeCliente: listaRespuestasC1,
+                encuestaEnviada: true,
+                cambioEstado: cambioEstados1,
+                cliente: ListaClientes()[0]
+                );
+
+            Llamada llamada2 = new Llamada(
+                descripcionOperador: "Esta es una descripcion del operador",
+                detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
+                observacionAuditor: "Cualquier Cosa",
+                respuestasDeCliente: listaRespuestasC1,
+                encuestaEnviada: true,
+                cambioEstado: cambioEstados1,
+                cliente: ListaClientes()[1]
+                );
+
+            Llamada llamada3 = new Llamada(
+                descripcionOperador: "Esta es una descripcion del operador",
+                detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
+                observacionAuditor: "Cualquier Cosa",
+                respuestasDeCliente: listaRespuestasC1,
+                encuestaEnviada: true,
+                cambioEstado: cambioEstados1,
+                cliente: ListaClientes()[2]
+                );
 
             return listaLlamadas;
-            
+
         }
     }
 }

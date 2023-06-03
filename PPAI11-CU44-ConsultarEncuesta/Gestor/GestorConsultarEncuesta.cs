@@ -1,5 +1,5 @@
 ﻿using PPAI11_CU44_ConsultarEncuesta.Entidades;
-using PPAI11_CU44_ConsultarEncuesta.Datos
+using PPAI11_CU44_ConsultarEncuesta.Datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
