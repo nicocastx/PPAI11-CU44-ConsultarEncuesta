@@ -1,4 +1,5 @@
 ﻿using PPAI11_CU44_ConsultarEncuesta.Entidades;
+using PPAI11_CU44_ConsultarEncuesta.Datos
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 {
     public class GestorConsultarEncuesta
     {
+        
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
         public bool esDePeriodo { get; set; }

@@ -22,7 +22,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         {
             this.descripcionOperador = descripcionOperador;
             this.detalleAccionRequerida = detalleAccionRequerida;
-            this.duracion = duracion;
+            this.duracion = this.calcularDuracion();
             this.encuestaEnviada = encuestaEnviada;
             this.observacionAuditor = observacionAuditor;
             this.respuestasDeEncuesta = respuestasDeCliente;
@@ -46,6 +46,18 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             return false;
         }
 
+        public int calcularDuracion()
+        {
+            for (var i = 0; i < cambioEstado.Count; i++)
+            {
+                fechaHoraInicio = 
+                if (cambioEstado[i].esEstadoInicial())
+                {
+                    
+                }
+            }
+            return false;
+        }
         public string getNombreClienteDeLlamada()
         {
             return this.cliente.NombreCompleto;

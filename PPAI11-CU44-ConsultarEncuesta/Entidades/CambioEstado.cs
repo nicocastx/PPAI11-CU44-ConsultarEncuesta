@@ -32,5 +32,13 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             }
             return false;
         }
+
+        public bool esEstadoFinal() {
+            if (this.Estado.esFinalizada())
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
