@@ -17,5 +17,14 @@
             }
             return false;
         }
+
+        public bool esFinalizada()
+        {
+            if (this.nombre == "Finalizada")
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
