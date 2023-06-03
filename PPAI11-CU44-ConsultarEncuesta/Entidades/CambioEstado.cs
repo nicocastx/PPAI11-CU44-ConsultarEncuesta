@@ -30,7 +30,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 
         public bool esEstadoInicial()
         {
-            return Estado.esIniciada();
+            if (this.Estado.esIniciada())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

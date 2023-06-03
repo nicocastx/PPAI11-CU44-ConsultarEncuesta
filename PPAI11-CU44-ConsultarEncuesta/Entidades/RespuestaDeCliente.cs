@@ -11,10 +11,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
     {
         public readonly RespuestaPosible respuestaPosible;
         public DateTime fechaEncuesta { get; set; }
+        public RespuestaPosible respuestaSeleccionada { get; set; }
 
-        public RespuestaDeCliente(RespuestaPosible respuestaPosible, DateTime fechaEncuesta)
+        public RespuestaDeCliente(RespuestaPosible respuestaSeleccionada, DateTime fechaEncuesta)
         {
-            this.respuestaPosible = respuestaPosible;
+            this.respuestaSeleccionada = respuestaPosible;
             this.fechaEncuesta = fechaEncuesta;
         }
 

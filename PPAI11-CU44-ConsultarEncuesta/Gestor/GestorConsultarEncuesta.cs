@@ -18,7 +18,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         public List<RespuestaPosible> respuestas { get; set; }
         public List<Pregunta> preguntas { get; set; }
 
-        public GestorConsultarEncuesta(DateTime fechaInicio, DateTime fechaFin, bool esDePeriodo, List<Llamada> llamadasDePeriodo, string nombreCliente, int duracion, List<RespuestaPosible> respuestas, List<Pregunta> preguntas)
+        public GestorConsultarEncuesta()
         {
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;

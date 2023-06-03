@@ -21,10 +21,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
 }

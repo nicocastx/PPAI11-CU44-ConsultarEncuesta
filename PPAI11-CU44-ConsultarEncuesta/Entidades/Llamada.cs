@@ -11,14 +11,14 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         public string descripcionOperador { get; set; }
         public string detalleAccionRequerida { get; set; }
         public int duracion { get; set; }
-        public string encuestaEnviada { get; set; }
+        public bool encuestaEnviada { get; set; }
         public string observacionAuditor { get; set; }
         public List<RespuestaDeCliente> respuestasDeCliente { get; set; }
         public List<CambioEstado> cambioEstado { get; set; }
         public Cliente cliente { get; set; }
 
         /*Constructor*/
-        public Llamada(string descripcionOperador, string detalleAccionRequerida, int duracion, string encuestaEnviada, string observacionAuditor, List<RespuestaDeCliente> respuestasDeCliente, List<CambioEstado> cambioEstado, Cliente cliente)
+        public Llamada(string descripcionOperador, string detalleAccionRequerida, int duracion, bool encuestaEnviada, string observacionAuditor, List<RespuestaDeCliente> respuestasDeCliente, List<CambioEstado> cambioEstado, Cliente cliente)
         {
             this.descripcionOperador = descripcionOperador;
             this.detalleAccionRequerida = detalleAccionRequerida;
@@ -33,7 +33,17 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         //!Verificar ESDEPERIODO
         public bool EsDePeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
-            return true;
+            for(var i = 0; i < cambioEstado.Count; i++)
+            {
+                if (cambioEstado[i].esEstadoInicial())
+                {
+                    if (cambioEstado[i].FechaHoraInicio < fechaFinPeriodo && cambioEstado[i].FechaHoraInicio > fechaInicioPeriodo)
+                    {
+                        return true;
+                    } 
+                }
+            }
+            return false;
         }
 
         public string getNombreClienteDeLlamada()
