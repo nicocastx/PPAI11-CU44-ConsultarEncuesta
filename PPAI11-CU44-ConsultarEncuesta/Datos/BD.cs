@@ -180,7 +180,6 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 );
 
             return listaLlamadas;
-
         }
     }
 }

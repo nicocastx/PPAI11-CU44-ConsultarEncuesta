@@ -11,7 +11,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
     public class GestorConsultarEncuesta
     {
         
-        public DateTime fechaInicio { get; set; }
+        /*public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
         public bool esDePeriodo { get; set; }
         public List<Llamada> llamadasDePeriodo { get; set; }
@@ -30,9 +30,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             this.duracion = duracion;
             this.respuestas = respuestas;
             this.preguntas = preguntas;
-        }
+        }*/
 
-        public void consultarEncuesta() { 
+        public void consultarEncuesta()
+        { 
+
         }
 
         public void tomarFechaInicio()
