@@ -11,8 +11,9 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
         {
             List<Cliente> listaClientes = new List<Cliente>();
             Cliente clienteUno = new Cliente(Dni: 23123135, NombreCompleto: "Tito Pig", NroCelular: 351674823);
-            Cliente clienteDos = new Cliente(Dni: 23123133, NombreCompleto: "Kevin Gil", NroCelular: 351658402);
+            Cliente clienteDos = new Cliente(Dni: 23123133, NombreCompleto: "Kevin crack", NroCelular: 351658402);
             Cliente clienteTres = new Cliente(Dni: 23123137, NombreCompleto: "Isma Gatto", NroCelular: 351090232);
+            Cliente clienteCuatro = new Cliente(Dni: 23123137, NombreCompleto: "Joaco Wachin", NroCelular: 351091398);
             listaClientes.Add(clienteUno);
             listaClientes.Add(clienteDos);
             listaClientes.Add(clienteTres);
@@ -83,7 +84,6 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
 
         public static List<Encuesta> ListaEncuestas()
         {
-            //kevin come trav...
             List<Encuesta> listaEncuestas = new List<Encuesta>();
             Encuesta encuesta1 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2023, 7, 11, 13, 20, 30), ListaPreguntas());
             Encuesta encuesta2 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2023, 11, 7, 18, 50, 25), ListaPreguntas());
@@ -96,7 +96,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             return listaEncuestas;
         }
 
-        public static List<Llamada> Llamada()
+        public static List<Llamada> ListaLlamadas()
         {
             List<Llamada> listaLlamadas = new List<Llamada>();
 
@@ -178,6 +178,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 cambioEstado: cambioEstados1,
                 cliente: ListaClientes()[2]
                 );
+
+            listaLlamadas.Add(llamada1);
+            listaLlamadas.Add(llamada2);
+            listaLlamadas.Add(llamada3);
 
             return listaLlamadas;
         }

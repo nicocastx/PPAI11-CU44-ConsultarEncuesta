@@ -10,7 +10,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 {
     public class GestorConsultarEncuesta
     {
-        
+        public DateTime fechaInicio { get; set; }
+        public DateTime fechaFin { get; set; }
+        public Llamada Llamada { get; set; }
+
         /*public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
         public bool esDePeriodo { get; set; }
@@ -37,20 +40,41 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         }
 
-        public void tomarFechaInicio()
+        public void tomarFechaInicio(DateTime fechaInicioIngresada)
         {
+            this.fechaInicio = fechaInicioIngresada;
         }
 
-        public void tomarFechaFin()
+        public void tomarFechaFin(DateTime fechaFinIngresada)
         {
+            this.fechaFin = fechaFinIngresada;
         }
 
-        public void filtrarPorPeriodo()
+        public List<Llamada> filtrarPorPeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
+            List<Llamada> Llamadas = BD.ListaLlamadas();
+            List<Llamada> LlamadasFiltradas = new List<Llamada>();
+            for(var i = 0; i < Llamadas.Count; i++)
+            {
+                if (Llamadas[i].EsDePeriodo(fechaInicioPeriodo, fechaFinPeriodo))
+                {
+                    LlamadasFiltradas.Add(Llamadas[i]);
+                }
+            }
+            return LlamadasFiltradas;
         }
 
-        public void filtrarQueTenganEncuestas()
+        public List<Llamada> filtrarQueTenganEncuestas(List<Llamada> Llamadas)
         {
+            List<Llamada> LlamadasFiltradasConEncuesta = new List<Llamada>();
+            for (var i = 0; i < Llamadas.Count; i++)
+            {
+                if (Llamadas[i].ExistenRespuestas())
+                {
+                    LlamadasFiltradasConEncuesta.Add(Llamadas[i]);
+                }
+            }
+            return LlamadasFiltradasConEncuesta;
         }
 
         public void tomarOpcionLlamada()

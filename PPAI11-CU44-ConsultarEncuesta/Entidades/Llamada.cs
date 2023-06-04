@@ -30,7 +30,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             this.cliente = cliente;
         }
 
-        //!Verificar ESDEPERIODO
+        //!Verificar ESDEPERIODO, DEVUELVE TRUE O FALSE
         public bool EsDePeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
             for (var i = 0; i < cambioEstado.Count; i++)
