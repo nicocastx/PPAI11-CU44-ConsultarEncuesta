@@ -64,6 +64,28 @@ namespace PPAI11_CU44_ConsultarEncuesta
 
             DGV.DataSource = llamadas;
 
+            DataGridViewTextBoxColumn columnaCliente = new DataGridViewTextBoxColumn();
+            columnaCliente.HeaderText = "Cliente";
+            columnaCliente.Name = "Cliente";
+            columnaCliente.ReadOnly = true;
+            DGV.Columns.Add(columnaCliente);
+
+            DataGridViewTextBoxColumn columnaDuracion = new DataGridViewTextBoxColumn();
+            columnaDuracion.DataPropertyName = "duracion";
+            columnaDuracion.HeaderText = "Duración";
+            DGV.Columns.Add(columnaDuracion);
+
+            DataGridViewTextBoxColumn columnaAccionRequerida = new DataGridViewTextBoxColumn();
+            columnaAccionRequerida.DataPropertyName = "detalleAccionRequerida";
+            columnaAccionRequerida.HeaderText = "Acción Requerida";
+            DGV.Columns.Add(columnaAccionRequerida);
+
+            // Configurar el valor del nombre del cliente en la columna "Cliente"
+            foreach (DataGridViewRow fila in DGV.Rows)
+            {
+                Llamada llamada = fila.DataBoundItem as Llamada;
+                fila.Cells["Cliente"].Value = llamada.cliente.NombreCompleto;
+            }
         }
 
     }
