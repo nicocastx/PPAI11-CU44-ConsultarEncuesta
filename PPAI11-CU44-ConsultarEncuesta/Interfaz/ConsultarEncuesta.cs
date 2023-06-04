@@ -87,5 +87,30 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
             }
         }
 
+        private void DGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = DGV.Rows[e.RowIndex];
+
+                // Obtener el estado de la llamada
+
+                // Obtener la llamada seleccionada
+                Llamada llamadaSeleccionada = filaSeleccionada.DataBoundItem as Llamada;
+
+                // Acceder a los datos de la llamada seleccionada
+                string nombreCliente = llamadaSeleccionada.cliente.NombreCompleto;
+                string estadoLlamada = llamadaSeleccionada.cambioEstado[1].Estado.nombre;
+                string duracionLlamada = llamadaSeleccionada.duracion.ToString();
+
+
+                // Actualizar los controles en tu formulario con los datos obtenidos
+                LblClienteDato.Text = nombreCliente;
+                LblEstadoDato.Text = estadoLlamada;
+                LblDuracionDato.Text = duracionLlamada;
+
+            }
+        }
+
     }
 }
