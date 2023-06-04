@@ -1,4 +1,5 @@
-﻿using PPAI11_CU44_ConsultarEncuesta.Entidades;
+﻿using PPAI11_CU44_ConsultarEncuesta.Datos;
+using PPAI11_CU44_ConsultarEncuesta.Entidades;
 using PPAI11_CU44_ConsultarEncuesta.Gestor;
 using System;
 using System.Collections.Generic;
@@ -26,11 +27,13 @@ namespace PPAI11_CU44_ConsultarEncuesta
             this.respuestas = respuestas;
             this.preguntas = preguntas;
         }*/
+
         public ConsultarEncuesta()
         {
             InitializeComponent();
         }
 
+        public static BD datos = new BD();
         public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta();
 
         private void ConsultarEncuesta_Load(object sender, EventArgs e)
@@ -56,11 +59,10 @@ namespace PPAI11_CU44_ConsultarEncuesta
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
+            List<Llamada> llamadas = BD.ListaLlamadas();
+            DGV.AutoGenerateColumns = false;
 
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
+            DGV.DataSource = llamadas;
 
         }
 

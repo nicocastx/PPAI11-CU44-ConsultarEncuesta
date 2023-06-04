@@ -22,11 +22,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         {
             this.descripcionOperador = descripcionOperador;
             this.detalleAccionRequerida = detalleAccionRequerida;
-            this.duracion = this.calcularDuracion();
             this.encuestaEnviada = encuestaEnviada;
             this.observacionAuditor = observacionAuditor;
             this.respuestasDeEncuesta = respuestasDeCliente;
             this.cambioEstado = cambioEstado;
+            this.duracion = this.calcularDuracion();
             this.cliente = cliente;
         }
 
@@ -46,7 +46,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             return false;
         }
 
-        public int calcularDuracion()
+        /*public int calcularDuracion()
         {
             DateTime fechaHoraInicio = new DateTime();
             DateTime fechaHoraFin = new DateTime();
@@ -65,7 +65,38 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 
             int minutos = (int)diferencia.TotalMinutes;
             return minutos;
+        }*/
+
+        public int calcularDuracion()
+        {
+            DateTime fechaHoraInicio = DateTime.MinValue;
+            DateTime fechaHoraFin = DateTime.MinValue;
+
+            for (var i = 0; i < cambioEstado.Count; i++)
+            {
+                if (cambioEstado[i] != null)
+                {
+                    if (cambioEstado[i].esEstadoInicial())
+                    {
+                        fechaHoraInicio = cambioEstado[i].FechaHoraInicio;
+                    }
+                    else if (cambioEstado[i].esEstadoFinal())
+                    {
+                        fechaHoraFin = cambioEstado[i].FechaHoraInicio;
+                    }
+                }
+            }
+
+            if (fechaHoraInicio != DateTime.MinValue && fechaHoraFin != DateTime.MinValue)
+            {
+                TimeSpan diferencia = fechaHoraFin.Subtract(fechaHoraInicio);
+                int minutos = (int)diferencia.TotalMinutes;
+                return minutos;
+            }
+
+            return 0; // Valor predeterminado si no se puede calcular la duración
         }
+
         public string getNombreClienteDeLlamada()
         {
             return this.cliente.NombreCompleto;
