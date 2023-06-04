@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PPAI11_CU44_ConsultarEncuesta
+namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 {
     public partial class ConsultarEncuesta : Form
     {
@@ -38,7 +38,6 @@ namespace PPAI11_CU44_ConsultarEncuesta
 
         private void ConsultarEncuesta_Load(object sender, EventArgs e)
         {
-            gestorCE.consultarEncuesta();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

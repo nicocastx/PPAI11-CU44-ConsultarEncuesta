@@ -1,18 +1,23 @@
 ﻿using PPAI11_CU44_ConsultarEncuesta.Entidades;
+using PPAI11_CU44_ConsultarEncuesta.Interfaz;
 using PPAI11_CU44_ConsultarEncuesta.Datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 {
     public class GestorConsultarEncuesta
     {
+        static public List<DataGridViewRow> filaGrillaLlamadas = new List<DataGridViewRow>();
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
-        public Llamada Llamada { get; set; }
+
+        //Lista de llamadas de BD
+        public List<Llamada> Llamadas { get; set; }
 
         /*public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
@@ -35,9 +40,15 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             this.preguntas = preguntas;
         }*/
 
-        public void consultarEncuesta()
-        { 
+        public void consultarEncuesta(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
+        {
+            filaGrillaLlamadas.Clear();
 
+            //REVISAR SI ESTA MAL
+            List<Llamada> LlamadasAMostrar = filtrarPorPeriodo(fechaInicioPeriodo, fechaFinPeriodo);
+            LlamadasAMostrar = filtrarQueTenganEncuestas(LlamadasAMostrar);
+
+            
         }
 
         public void tomarFechaInicio(DateTime fechaInicioIngresada)
@@ -52,9 +63,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         public List<Llamada> filtrarPorPeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
-            List<Llamada> Llamadas = BD.ListaLlamadas();
             List<Llamada> LlamadasFiltradas = new List<Llamada>();
-            for(var i = 0; i < Llamadas.Count; i++)
+            for(var i = 0; i < this.Llamadas.Count; i++)
             {
                 if (Llamadas[i].EsDePeriodo(fechaInicioPeriodo, fechaFinPeriodo))
                 {
