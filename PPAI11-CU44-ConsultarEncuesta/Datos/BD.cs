@@ -137,9 +137,9 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             RespuestaDeCliente respuesta2C1 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[0][1]);
             RespuestaDeCliente respuesta3C1 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[1][1]);
 
-            RespuestaDeCliente respuesta1C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[0][3]);
-            RespuestaDeCliente respuesta2C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[0][4]);
-            RespuestaDeCliente respuesta3C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[1][0]);
+            RespuestaDeCliente respuesta1C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[1][3]);
+            RespuestaDeCliente respuesta2C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[1][4]);
+            RespuestaDeCliente respuesta3C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[0][0]);
 
             listaRespuestasC1.Add(respuesta1C1);
             listaRespuestasC1.Add(respuesta2C1);

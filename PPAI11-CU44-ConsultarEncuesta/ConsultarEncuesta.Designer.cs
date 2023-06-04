@@ -157,7 +157,6 @@
             this.fechaFin.Name = "fechaFin";
             this.fechaFin.Size = new System.Drawing.Size(180, 20);
             this.fechaFin.TabIndex = 2;
-            this.fechaFin.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // BtnCSV
             // 
@@ -599,6 +598,7 @@
             // 
             // DGV
             // 
+            this.DGV.AllowUserToOrderColumns = true;
             this.DGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Location = new System.Drawing.Point(24, 149);
