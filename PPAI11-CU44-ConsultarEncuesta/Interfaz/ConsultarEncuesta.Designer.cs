@@ -605,6 +605,7 @@
             this.DGV.Name = "DGV";
             this.DGV.Size = new System.Drawing.Size(462, 347);
             this.DGV.TabIndex = 55;
+            this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             // 
             // ConsultarEncuesta
             // 

@@ -125,6 +125,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
 
             //Se agregan los cambios de estado a la lista de estados
 
+            cambioEstados1.Add(cambioestado1I);
+            cambioEstados1.Add(cambioestado1F);
 
             //LISTAS PARA RESPUESTAS DE CLIENTES DE LLAMADAS
 

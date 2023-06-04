@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultarEncuesta.cs">
+    <Compile Include="Interfaz\ConsultarEncuesta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarEncuesta.Designer.cs">
+    <Compile Include="Interfaz\ConsultarEncuesta.Designer.cs">
       <DependentUpon>ConsultarEncuesta.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\BD.cs" />
-    <Compile Include="EncuestaCSV.cs">
+    <Compile Include="Interfaz\EncuestaCSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EncuestaCSV.Designer.cs">
+    <Compile Include="Interfaz\EncuestaCSV.Designer.cs">
       <DependentUpon>EncuestaCSV.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\CambioEstado.cs" />
@@ -67,22 +67,22 @@
     <Compile Include="Entidades\Pregunta.cs" />
     <Compile Include="Entidades\RespuestaDeCliente.cs" />
     <Compile Include="Entidades\RespuestaPosible.cs" />
-    <Compile Include="Menu.cs">
+    <Compile Include="Interfaz\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Interfaz\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestor\GestorConsultarEncuesta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ConsultarEncuesta.resx">
+    <EmbeddedResource Include="Interfaz\ConsultarEncuesta.resx">
       <DependentUpon>ConsultarEncuesta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EncuestaCSV.resx">
+    <EmbeddedResource Include="Interfaz\EncuestaCSV.resx">
       <DependentUpon>EncuestaCSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Interfaz\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -108,9 +108,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaz\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icon_encuesta.png" />
   </ItemGroup>
