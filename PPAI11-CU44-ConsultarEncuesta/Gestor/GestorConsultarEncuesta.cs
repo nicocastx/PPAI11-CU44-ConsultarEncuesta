@@ -40,7 +40,12 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             this.preguntas = preguntas;
         }*/
 
-        public void consultarEncuesta(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
+        public GestorConsultarEncuesta()
+        {
+            this.Llamadas = BD.ListaLlamadas();
+        }
+
+        public List<Llamada> consultarEncuesta(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
             filaGrillaLlamadas.Clear();
 
@@ -48,7 +53,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             List<Llamada> LlamadasAMostrar = filtrarPorPeriodo(fechaInicioPeriodo, fechaFinPeriodo);
             LlamadasAMostrar = filtrarQueTenganEncuestas(LlamadasAMostrar);
 
-            
+            return LlamadasAMostrar;
         }
 
         public void tomarFechaInicio(DateTime fechaInicioIngresada)
@@ -91,8 +96,17 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         {
         }
 
-        public void mostrarDatosLlamada()
+        public void mostrarDatosLlamada() //solo recibe llamada seleccionada de parametro
         {
+            //LLAMADA SELECCIONADA
+            //getNombreClIENTE
+            //getDURACION
+            //getRespuestas
+
+            //ENCUESTAS
+            //getDescripcionEncuesta bucle for; devuelve pregun
+
+            //return LLAMADACONPREGUNTAS
         }
 
         public void tomarOpcionGenerarCSV()

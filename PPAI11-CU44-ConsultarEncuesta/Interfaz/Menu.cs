@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI11_CU44_ConsultarEncuesta.Interfaz;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

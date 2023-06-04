@@ -11,7 +11,7 @@
 
         public bool esIniciada()
         {
-            if (this.nombre == "Iniciada")
+            if (this.nombre == "Inicializada")
             {
                 return true;
             }

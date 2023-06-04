@@ -38,6 +38,24 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
         private void ConsultarEncuesta_Load(object sender, EventArgs e)
         {
+
+            DGV.AutoGenerateColumns = false;
+
+            DataGridViewTextBoxColumn columnaCliente = new DataGridViewTextBoxColumn();
+            columnaCliente.HeaderText = "Cliente";
+            columnaCliente.Name = "Cliente";
+            columnaCliente.ReadOnly = true;
+            DGV.Columns.Add(columnaCliente);
+
+            DataGridViewTextBoxColumn columnaDuracion = new DataGridViewTextBoxColumn();
+            columnaDuracion.DataPropertyName = "duracion";
+            columnaDuracion.HeaderText = "Duración";
+            DGV.Columns.Add(columnaDuracion);
+
+            DataGridViewTextBoxColumn columnaAccionRequerida = new DataGridViewTextBoxColumn();
+            columnaAccionRequerida.DataPropertyName = "detalleAccionRequerida";
+            columnaAccionRequerida.HeaderText = "Acción Requerida";
+            DGV.Columns.Add(columnaAccionRequerida);
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -58,26 +76,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            List<Llamada> llamadas = BD.ListaLlamadas();
-            DGV.AutoGenerateColumns = false;
-
-            DGV.DataSource = llamadas;
-
-            DataGridViewTextBoxColumn columnaCliente = new DataGridViewTextBoxColumn();
-            columnaCliente.HeaderText = "Cliente";
-            columnaCliente.Name = "Cliente";
-            columnaCliente.ReadOnly = true;
-            DGV.Columns.Add(columnaCliente);
-
-            DataGridViewTextBoxColumn columnaDuracion = new DataGridViewTextBoxColumn();
-            columnaDuracion.DataPropertyName = "duracion";
-            columnaDuracion.HeaderText = "Duración";
-            DGV.Columns.Add(columnaDuracion);
-
-            DataGridViewTextBoxColumn columnaAccionRequerida = new DataGridViewTextBoxColumn();
-            columnaAccionRequerida.DataPropertyName = "detalleAccionRequerida";
-            columnaAccionRequerida.HeaderText = "Acción Requerida";
-            DGV.Columns.Add(columnaAccionRequerida);
+            DGV.DataSource = gestorCE.consultarEncuesta(fechaInicio.Value, fechaFin.Value);
 
             // Configurar el valor del nombre del cliente en la columna "Cliente"
             foreach (DataGridViewRow fila in DGV.Rows)

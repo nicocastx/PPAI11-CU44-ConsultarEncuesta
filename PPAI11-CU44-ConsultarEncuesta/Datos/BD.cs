@@ -17,6 +17,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             listaClientes.Add(clienteUno);
             listaClientes.Add(clienteDos);
             listaClientes.Add(clienteTres);
+            listaClientes.Add(clienteCuatro);
 
             return listaClientes;
         }
@@ -117,8 +118,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             CambioEstado cambioestado2I = new CambioEstado(FechaHoraInicio: new DateTime(2021, 3, 28, 14, 45, 0), Estado: ListaEstados()[0]);
             CambioEstado cambioestado2F = new CambioEstado(FechaHoraInicio: new DateTime(2021, 3, 28, 15, 00, 30), Estado: ListaEstados()[1]);
             //Cambios de estado para llamada 3
-            CambioEstado cambioestado3I = new CambioEstado(FechaHoraInicio: new DateTime(2021, 10, 5, 11, 0, 0), Estado: ListaEstados()[0]);
-            CambioEstado cambioestado3F = new CambioEstado(FechaHoraInicio: new DateTime(2021, 10, 5, 11, 15, 0), Estado: ListaEstados()[1]);
+            CambioEstado cambioestado3I = new CambioEstado(FechaHoraInicio: new DateTime(2022, 10, 5, 11, 0, 0), Estado: ListaEstados()[0]);
+            CambioEstado cambioestado3F = new CambioEstado(FechaHoraInicio: new DateTime(2022, 10, 5, 11, 15, 0), Estado: ListaEstados()[1]);
             //Cambios de estado para llamada 4
             CambioEstado cambioestado4I = new CambioEstado(FechaHoraInicio: new DateTime(2022, 2, 20, 16, 10, 0), Estado: ListaEstados()[0]);
             CambioEstado cambioestado4F = new CambioEstado(FechaHoraInicio: new DateTime(2022, 2, 20, 16, 18, 0), Estado: ListaEstados()[1]);
@@ -127,6 +128,12 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
 
             cambioEstados1.Add(cambioestado1I);
             cambioEstados1.Add(cambioestado1F);
+            cambioEstados2.Add(cambioestado2I);
+            cambioEstados2.Add(cambioestado2F);
+            cambioEstados3.Add(cambioestado3I);
+            cambioEstados3.Add(cambioestado3F);
+            cambioEstados4.Add(cambioestado4I);
+            cambioEstados4.Add(cambioestado4F);
 
             //LISTAS PARA RESPUESTAS DE CLIENTES DE LLAMADAS
 
@@ -147,9 +154,9 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             listaRespuestasC1.Add(respuesta2C1);
             listaRespuestasC1.Add(respuesta3C1);
 
-            listaRespuestasC1.Add(respuesta1C2);
-            listaRespuestasC1.Add(respuesta2C2);
-            listaRespuestasC1.Add(respuesta3C2);
+            listaRespuestasC2.Add(respuesta1C2);
+            listaRespuestasC2.Add(respuesta2C2);
+            listaRespuestasC2.Add(respuesta3C2);
 
             Llamada llamada1 = new Llamada(
                 descripcionOperador: "Esta es una descripcion del operador",
@@ -165,9 +172,9 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 descripcionOperador: "Esta es una descripcion del operador",
                 detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
                 observacionAuditor: "Cualquier Cosa",
-                respuestasDeCliente: listaRespuestasC1,
+                respuestasDeCliente: listaRespuestasC2,
                 encuestaEnviada: true,
-                cambioEstado: cambioEstados1,
+                cambioEstado: cambioEstados2,
                 cliente: ListaClientes()[1]
                 );
 
@@ -175,15 +182,28 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 descripcionOperador: "Esta es una descripcion del operador",
                 detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
                 observacionAuditor: "Cualquier Cosa",
-                respuestasDeCliente: listaRespuestasC1,
+                respuestasDeCliente: listaRespuestasC2,
                 encuestaEnviada: true,
-                cambioEstado: cambioEstados1,
+                cambioEstado: cambioEstados3,
                 cliente: ListaClientes()[2]
                 );
+
+            Llamada llamada4 = new Llamada(
+            descripcionOperador: "Esta es una descripcion del operador",
+            detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
+            observacionAuditor: "Cualquier Cosa",
+            respuestasDeCliente: listaRespuestasC1,
+            encuestaEnviada: true,
+            cambioEstado: cambioEstados4,
+            cliente: ListaClientes()[3]
+            );
+
+
 
             listaLlamadas.Add(llamada1);
             listaLlamadas.Add(llamada2);
             listaLlamadas.Add(llamada3);
+            listaLlamadas.Add(llamada4);
 
             return listaLlamadas;
         }
