@@ -33,8 +33,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
             InitializeComponent();
         }
 
-        public static BD datos = new BD();
-        public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta();
+        public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
 
         private void ConsultarEncuesta_Load(object sender, EventArgs e)
         {
@@ -60,12 +59,12 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            gestorCE.finCU();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
+        {            
+            gestorCE.finCU();
         }
 
         private void BtnCSV_Click(object sender, EventArgs e)
@@ -86,6 +85,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
             }
         }
 
+        //solicitar Opcion Llamada
         private void DGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -95,21 +95,27 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
                 // Obtener el estado de la llamada
 
                 // Obtener la llamada seleccionada
-                Llamada llamadaSeleccionada = filaSeleccionada.DataBoundItem as Llamada;
+                //Llamada llamadaSeleccionada = filaSeleccionada.DataBoundItem as Llamada;
+
+                gestorCE.tomarOpcionLlamada(filaSeleccionada.DataBoundItem as Llamada);
+
+                List<String> llamadaSeleccionada = gestorCE.mostrarDatosLlamada();
 
                 // Acceder a los datos de la llamada seleccionada
-                string nombreCliente = llamadaSeleccionada.cliente.NombreCompleto;
-                string estadoLlamada = llamadaSeleccionada.cambioEstado[1].Estado.nombre;
-                string duracionLlamada = llamadaSeleccionada.duracion.ToString();
-
+                string nombreCliente = llamadaSeleccionada[0];
+                string estadoLlamada = llamadaSeleccionada[1];
+                string duracionLlamada = llamadaSeleccionada[2];
 
                 // Actualizar los controles en tu formulario con los datos obtenidos
                 LblClienteDato.Text = nombreCliente;
                 LblEstadoDato.Text = estadoLlamada;
                 LblDuracionDato.Text = duracionLlamada;
-
+                LblPreguntasDatos.Text = "";
+                for (int i = 3; i < llamadaSeleccionada.Count; i++)
+                {
+                    LblPreguntasDatos.Text += $"{llamadaSeleccionada[i]}\n";
+                }
             }
         }
-
     }
 }

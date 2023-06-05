@@ -83,15 +83,17 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             return listaPreguntas;
         }
 
+
+
         public static List<Encuesta> ListaEncuestas()
         {
             List<Encuesta> listaEncuestas = new List<Encuesta>();
-            Encuesta encuesta1 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2023, 7, 11, 13, 20, 30), ListaPreguntas());
-            Encuesta encuesta2 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2023, 11, 7, 18, 50, 25), ListaPreguntas());
-            Encuesta encuesta3 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2023, 12, 4, 22, 10, 17), ListaPreguntas());
+            //Encuesta encuesta1 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2021, 12, 1, 1, 00, 00), ListaPreguntas());
+            //Encuesta encuesta2 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2022, 12, 1, 1, 00, 00), ListaPreguntas());
+            Encuesta encuesta3 = new Encuesta("Encuesta de satisfacion del servicio ofrecido", new DateTime(2024, 12, 1, 1, 00, 00), ListaPreguntas());
 
-            listaEncuestas.Add(encuesta1);
-            listaEncuestas.Add(encuesta2);
+            //listaEncuestas.Add(encuesta1);
+            //listaEncuestas.Add(encuesta2);
             listaEncuestas.Add(encuesta3);
 
             return listaEncuestas;
@@ -121,8 +123,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             CambioEstado cambioestado3I = new CambioEstado(FechaHoraInicio: new DateTime(2022, 10, 5, 11, 0, 0), Estado: ListaEstados()[0]);
             CambioEstado cambioestado3F = new CambioEstado(FechaHoraInicio: new DateTime(2022, 10, 5, 11, 15, 0), Estado: ListaEstados()[1]);
             //Cambios de estado para llamada 4
-            CambioEstado cambioestado4I = new CambioEstado(FechaHoraInicio: new DateTime(2022, 2, 20, 16, 10, 0), Estado: ListaEstados()[0]);
-            CambioEstado cambioestado4F = new CambioEstado(FechaHoraInicio: new DateTime(2022, 2, 20, 16, 18, 0), Estado: ListaEstados()[1]);
+            CambioEstado cambioestado4I = new CambioEstado(FechaHoraInicio: new DateTime(2023, 2, 20, 16, 10, 0), Estado: ListaEstados()[0]);
+            CambioEstado cambioestado4F = new CambioEstado(FechaHoraInicio: new DateTime(2023, 2, 20, 16, 18, 0), Estado: ListaEstados()[1]);
 
             //Se agregan los cambios de estado a la lista de estados
 
@@ -146,7 +148,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             RespuestaDeCliente respuesta2C1 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[0][1]);
             RespuestaDeCliente respuesta3C1 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[1][1]);
 
-            RespuestaDeCliente respuesta1C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[1][3]);
+            RespuestaDeCliente respuesta1C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[0][1]);
             RespuestaDeCliente respuesta2C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[1][4]);
             RespuestaDeCliente respuesta3C2 = new RespuestaDeCliente(fechaEncuesta: new DateTime(2021, 1, 15, 9, 42, 10), respuestaSeleccionada: ListasRespuestaPosibles()[0][0]);
 

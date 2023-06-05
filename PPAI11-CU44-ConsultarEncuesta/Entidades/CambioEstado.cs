@@ -24,6 +24,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             set { fecha = value; }
         }*/
 
+        public string getNombreEstado()
+        {
+            return this.Estado.nombre;
+        }
+
         public bool esEstadoInicial()
         {
             if (this.Estado.esIniciada())

@@ -16,8 +16,12 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
 
+        public Llamada llamadaSeleccionada { get; set; }
+
         //Lista de llamadas de BD
         public List<Llamada> Llamadas { get; set; }
+
+        public List<Encuesta> Encuestas { get; set; }
 
         /*public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
@@ -40,9 +44,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             this.preguntas = preguntas;
         }*/
 
-        public GestorConsultarEncuesta()
+        public GestorConsultarEncuesta(List<Llamada> llamadas, List<Encuesta> encuestas)
         {
-            this.Llamadas = BD.ListaLlamadas();
+            this.Llamadas = llamadas;
+            this.Encuestas = encuestas;
         }
 
         public List<Llamada> consultarEncuesta(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
@@ -53,6 +58,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             List<Llamada> LlamadasAMostrar = filtrarPorPeriodo(fechaInicioPeriodo, fechaFinPeriodo);
             LlamadasAMostrar = filtrarQueTenganEncuestas(LlamadasAMostrar);
 
+            if(LlamadasAMostrar.Count == 0)
+            {
+                MessageBox.Show("No hay llamadas en el periodo con encuestas respondidas!", "No hay llamadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             return LlamadasAMostrar;
         }
 
@@ -92,29 +101,55 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             return LlamadasFiltradasConEncuesta;
         }
 
-        public void tomarOpcionLlamada()
+        public void tomarOpcionLlamada(Llamada llamadaSeleccionada)
         {
+            this.llamadaSeleccionada = llamadaSeleccionada;
         }
 
-        public void mostrarDatosLlamada() //solo recibe llamada seleccionada de parametro
+        public List<String> mostrarDatosLlamada()
         {
-            //LLAMADA SELECCIONADA
-            //getNombreClIENTE
-            //getDURACION
-            //getRespuestas
+            string nombreCliente = llamadaSeleccionada.getNombreClienteDeLlamada();
+            string estadoLlamada = llamadaSeleccionada.esUltimoEstado();
+            string duracionLlamada = llamadaSeleccionada.duracion.ToString();
+            List<RespuestaDeCliente> respuestasCliente = llamadaSeleccionada.getRespuestas();
+            List<String> listaPreguntas = new List<string>();
+            
+            
+            for (var i = 0; i < this.Encuestas[0].pregunta.Count; i++)
+            {
+                listaPreguntas.Add(Encuestas[0].pregunta[i].descripcion);
+            }
 
-            //ENCUESTAS
-            //getDescripcionEncuesta bucle for; devuelve pregun
+            List<String> LlamadaConPreguntas = new List<string>
+            {
+                nombreCliente,
+                estadoLlamada,
+                duracionLlamada
+            };
 
-            //return LLAMADACONPREGUNTAS
+            for (int j = 0; j < listaPreguntas.Count; j++)
+            {
+                LlamadaConPreguntas.Add(listaPreguntas[j]);
+                LlamadaConPreguntas.Add(respuestasCliente[j].respuestaSeleccionada.valor.ToString());
+            }
+
+            return LlamadaConPreguntas;
         }
 
         public void tomarOpcionGenerarCSV()
         {
+
         }
 
         public void generarArchivoCSV()
         {
+
+        }
+
+        public void finCU()
+        {
+            MessageBox.Show("Se cancela el CU!", "CU Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ConsultarEncuesta.ActiveForm.Dispose();
         }
     }
 }

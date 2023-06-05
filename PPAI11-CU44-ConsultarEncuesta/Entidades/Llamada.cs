@@ -118,5 +118,18 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             return true;
         }
 
+        //Verifica el ultimo estado
+        public string esUltimoEstado()
+        {
+            for (var i =0; i < this.cambioEstado.Count; i++)
+            {
+                if (cambioEstado[i].esEstadoFinal())
+                {
+                    return cambioEstado[i].getNombreEstado();
+                }
+            }
+            return null;
+        }
+
     }
 }
