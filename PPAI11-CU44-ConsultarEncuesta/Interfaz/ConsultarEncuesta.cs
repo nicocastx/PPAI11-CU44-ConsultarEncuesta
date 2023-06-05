@@ -39,6 +39,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
         {
 
             DGV.AutoGenerateColumns = false;
+            // Configurar el modo de ajuste automático para las columnas
+            DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Ajustar el ancho de las columnas existentes
+            DGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
             DataGridViewTextBoxColumn columnaCliente = new DataGridViewTextBoxColumn();
             columnaCliente.HeaderText = "Cliente";
@@ -70,6 +75,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
         private void BtnCSV_Click(object sender, EventArgs e)
         {
             EncuestaCSV encuestaCSV = new EncuestaCSV();
+            this.Hide();
             encuestaCSV.Show();
         }
 
@@ -109,7 +115,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
                 // Actualizar los controles en tu formulario con los datos obtenidos
                 LblClienteDato.Text = nombreCliente;
                 LblEstadoDato.Text = estadoLlamada;
-                LblDuracionDato.Text = duracionLlamada;
+                LblDuracionDato.Text = duracionLlamada + " Minutos";
                 LblPreguntasDatos.Text = "";
                 for (int i = 3; i < llamadaSeleccionada.Count; i++)
                 {
@@ -117,5 +123,28 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
                 }
             }
         }
+
+        int m, mx, my;
+        private void titleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+
+        }
+
+        private void titleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+            }
+        }
+
+        private void titleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
+        }
+
     }
 }

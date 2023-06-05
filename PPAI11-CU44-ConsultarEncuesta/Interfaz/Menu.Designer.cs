@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PnlM = new System.Windows.Forms.Panel();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.BtnCEncuesta = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.PnlM.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // PnlM
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PnlM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.panel1.Controls.Add(this.BtnSalir);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.LblTitulo);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 20);
-            this.panel1.TabIndex = 1;
+            this.PnlM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
+            this.PnlM.Controls.Add(this.BtnSalir);
+            this.PnlM.Controls.Add(this.panel2);
+            this.PnlM.Controls.Add(this.LblTitulo);
+            this.PnlM.Location = new System.Drawing.Point(0, 0);
+            this.PnlM.Name = "PnlM";
+            this.PnlM.Size = new System.Drawing.Size(832, 20);
+            this.PnlM.TabIndex = 1;
+            this.PnlM.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown);
+            this.PnlM.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseMove);
+            this.PnlM.MouseUp += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseUp);
             // 
             // BtnSalir
             // 
@@ -67,6 +70,16 @@
             this.BtnSalir.Text = "X";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(228)))), ((int)(((byte)(187)))));
+            this.panel2.BackgroundImage = global::PPAI11_CU44_ConsultarEncuesta.Properties.Resources.icon_home;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(25, 20);
+            this.panel2.TabIndex = 10;
             // 
             // LblTitulo
             // 
@@ -99,16 +112,6 @@
             this.BtnCEncuesta.UseVisualStyleBackColor = false;
             this.BtnCEncuesta.Click += new System.EventHandler(this.BtnCSV_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(228)))), ((int)(((byte)(187)))));
-            this.panel2.BackgroundImage = global::PPAI11_CU44_ConsultarEncuesta.Properties.Resources.icon_home;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(25, 20);
-            this.panel2.TabIndex = 10;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,20 +119,20 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(816, 490);
             this.Controls.Add(this.BtnCEncuesta);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PnlM);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PnlM.ResumeLayout(false);
+            this.PnlM.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PnlM;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblTitulo;

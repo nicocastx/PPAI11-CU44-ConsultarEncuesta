@@ -149,7 +149,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         public void finCU()
         {
             MessageBox.Show("Se cancela el CU!", "CU Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ConsultarEncuesta.ActiveForm.Dispose();
+            Environment.Exit(1);
         }
+
     }
 }

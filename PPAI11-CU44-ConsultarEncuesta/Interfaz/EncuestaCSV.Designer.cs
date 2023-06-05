@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PnlCSV = new System.Windows.Forms.Panel();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.LblRespuesta4Dato = new System.Windows.Forms.Label();
             this.LblPregunta4Dato = new System.Windows.Forms.Label();
@@ -59,22 +60,24 @@
             this.LblLinea1 = new System.Windows.Forms.Label();
             this.LblLinea3 = new System.Windows.Forms.Label();
             this.LblLinea4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.PnlCSV.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // PnlCSV
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PnlCSV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.panel1.Controls.Add(this.BtnSalir);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.LblTitulo);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 20);
-            this.panel1.TabIndex = 2;
+            this.PnlCSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
+            this.PnlCSV.Controls.Add(this.BtnSalir);
+            this.PnlCSV.Controls.Add(this.panel2);
+            this.PnlCSV.Controls.Add(this.LblTitulo);
+            this.PnlCSV.Location = new System.Drawing.Point(0, 0);
+            this.PnlCSV.Name = "PnlCSV";
+            this.PnlCSV.Size = new System.Drawing.Size(832, 20);
+            this.PnlCSV.TabIndex = 2;
+            this.PnlCSV.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown);
+            this.PnlCSV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseMove);
+            this.PnlCSV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseUp);
             // 
             // BtnSalir
             // 
@@ -94,6 +97,16 @@
             this.BtnSalir.Text = "X";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(228)))), ((int)(((byte)(187)))));
+            this.panel2.BackgroundImage = global::PPAI11_CU44_ConsultarEncuesta.Properties.Resources.icon_csv;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(25, 20);
+            this.panel2.TabIndex = 10;
             // 
             // LblTitulo
             // 
@@ -415,16 +428,6 @@
             this.LblLinea4.TabIndex = 78;
             this.LblLinea4.Text = "_________________________________________";
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(228)))), ((int)(((byte)(187)))));
-            this.panel2.BackgroundImage = global::PPAI11_CU44_ConsultarEncuesta.Properties.Resources.icon_csv;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(25, 20);
-            this.panel2.TabIndex = 10;
-            // 
             // EncuestaCSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,13 +462,13 @@
             this.Controls.Add(this.LblLinea1);
             this.Controls.Add(this.LblLinea3);
             this.Controls.Add(this.LblLinea4);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PnlCSV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EncuestaCSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EncuestaCSV";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PnlCSV.ResumeLayout(false);
+            this.PnlCSV.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,7 +476,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PnlCSV;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblTitulo;

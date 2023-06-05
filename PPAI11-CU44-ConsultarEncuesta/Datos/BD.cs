@@ -73,7 +73,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
         {
             List<Pregunta> listaPreguntas = new List<Pregunta>();
             Pregunta pregunta1 = new Pregunta("¿Nuestro Servicio logró solucionar su problema?", ListasRespuestaPosibles()[0]);
-            Pregunta pregunta2 = new Pregunta("¿Cómo evaluaría su satisfacción respecto al servicio entregado por nuestro Operador?", ListasRespuestaPosibles()[1]);
+            Pregunta pregunta2 = new Pregunta("¿Cómo evaluaría su satisfacción respecto al servicio?", ListasRespuestaPosibles()[1]);
             Pregunta pregunta3 = new Pregunta("En general,¿Qué tan satisfecho está con esta compañía?", ListasRespuestaPosibles()[1]);
 
             listaPreguntas.Add(pregunta1);
@@ -161,9 +161,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             listaRespuestasC2.Add(respuesta3C2);
 
             Llamada llamada1 = new Llamada(
-                descripcionOperador: "Esta es una descripcion del operador",
-                detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
-                observacionAuditor: "Cualquier Cosa",
+                descripcionOperador: "El operador brinda atención al cliente de manera amable y" +
+                " profesional, ofreciendo soluciones y resolviendo consultas con eficiencia.",
+                detalleAccionRequerida: "Se requiere que el operador registre la información",
+                observacionAuditor: " el operador demostró un excelente manejo de las llamadas",
                 respuestasDeCliente: listaRespuestasC1,
                 encuestaEnviada: true,
                 cambioEstado: cambioEstados1,
@@ -171,9 +172,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 );
 
             Llamada llamada2 = new Llamada(
-                descripcionOperador: "Esta es una descripcion del operador",
-                detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
-                observacionAuditor: "Cualquier Cosa",
+                descripcionOperador: "El operador brinda atención al cliente de manera amable y" +
+                " profesional, ofreciendo soluciones y resolviendo consultas con eficiencia.",
+                detalleAccionRequerida: "Se requiere que el operador registre la información",
+                observacionAuditor: "el operador demostró paciencia",
                 respuestasDeCliente: listaRespuestasC2,
                 encuestaEnviada: true,
                 cambioEstado: cambioEstados2,
@@ -181,9 +183,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 );
 
             Llamada llamada3 = new Llamada(
-                descripcionOperador: "Esta es una descripcion del operador",
-                detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
-                observacionAuditor: "Cualquier Cosa",
+                descripcionOperador: "El operador brinda atención al cliente de manera amable y" +
+                " profesional, ofreciendo soluciones y resolviendo consultas con eficiencia.",
+                detalleAccionRequerida: "Se requiere que el operador registre la información",
+                observacionAuditor: "el operador demostró empatia",
                 respuestasDeCliente: listaRespuestasC2,
                 encuestaEnviada: true,
                 cambioEstado: cambioEstados3,
@@ -191,9 +194,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 );
 
             Llamada llamada4 = new Llamada(
-            descripcionOperador: "Esta es una descripcion del operador",
-            detalleAccionRequerida: "Esta es una descripcion de una accion requerida",
-            observacionAuditor: "Cualquier Cosa",
+            descripcionOperador: "El operador brinda atención al cliente de manera amable y" +
+            " profesional, ofreciendo soluciones y resolviendo consultas con eficiencia.",
+            detalleAccionRequerida: "Se requiere que el operador registre la información",
+            observacionAuditor: "el operador demostró empatia",
             respuestasDeCliente: listaRespuestasC1,
             encuestaEnviada: true,
             cambioEstado: cambioEstados4,

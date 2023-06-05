@@ -26,7 +26,31 @@ namespace PPAI11_CU44_ConsultarEncuesta
         private void BtnCSV_Click(object sender, EventArgs e)
         {
             ConsultarEncuesta consultarencuesta = new ConsultarEncuesta();
+            this.Hide();
             consultarencuesta.Show();
         }
+
+        int m, mx, my;
+        private void titleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+
+        }
+
+        private void titleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+            }
+        }
+
+        private void titleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
+        }
+
     }
 }

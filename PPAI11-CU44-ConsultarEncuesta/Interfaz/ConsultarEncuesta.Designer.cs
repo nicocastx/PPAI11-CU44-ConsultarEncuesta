@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PnlCE = new System.Windows.Forms.Panel();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblTitulo = new System.Windows.Forms.Label();
@@ -56,22 +56,25 @@
             this.LblLinea3 = new System.Windows.Forms.Label();
             this.LblLinea4 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
+            this.PnlCE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // PnlCE
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PnlCE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.panel1.Controls.Add(this.BtnSalir);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.LblTitulo);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(911, 20);
-            this.panel1.TabIndex = 0;
+            this.PnlCE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
+            this.PnlCE.Controls.Add(this.BtnSalir);
+            this.PnlCE.Controls.Add(this.panel2);
+            this.PnlCE.Controls.Add(this.LblTitulo);
+            this.PnlCE.Location = new System.Drawing.Point(0, 0);
+            this.PnlCE.Name = "PnlCE";
+            this.PnlCE.Size = new System.Drawing.Size(911, 20);
+            this.PnlCE.TabIndex = 0;
+            this.PnlCE.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown);
+            this.PnlCE.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseMove);
+            this.PnlCE.MouseUp += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseUp);
             // 
             // BtnSalir
             // 
@@ -108,7 +111,7 @@
             this.LblTitulo.Font = new System.Drawing.Font("Cascadia Mono", 11F, System.Drawing.FontStyle.Bold);
             this.LblTitulo.Location = new System.Drawing.Point(27, 0);
             this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(210, 25);
+            this.LblTitulo.Size = new System.Drawing.Size(171, 20);
             this.LblTitulo.TabIndex = 9;
             this.LblTitulo.Text = "Consultar Encuesta";
             // 
@@ -154,7 +157,7 @@
             this.BtnCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCSV.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnCSV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.BtnCSV.Location = new System.Drawing.Point(719, 512);
+            this.BtnCSV.Location = new System.Drawing.Point(773, 521);
             this.BtnCSV.Name = "BtnCSV";
             this.BtnCSV.Size = new System.Drawing.Size(110, 20);
             this.BtnCSV.TabIndex = 5;
@@ -172,7 +175,7 @@
             this.LblFechaInicio.Location = new System.Drawing.Point(21, 82);
             this.LblFechaInicio.MaximumSize = new System.Drawing.Size(79, 15);
             this.LblFechaInicio.Name = "LblFechaInicio";
-            this.LblFechaInicio.Size = new System.Drawing.Size(56, 15);
+            this.LblFechaInicio.Size = new System.Drawing.Size(79, 15);
             this.LblFechaInicio.TabIndex = 8;
             this.LblFechaInicio.Text = "Fecha Inicio";
             // 
@@ -186,7 +189,7 @@
             this.LblFechaFin.Location = new System.Drawing.Point(217, 83);
             this.LblFechaFin.MaximumSize = new System.Drawing.Size(79, 15);
             this.LblFechaFin.Name = "LblFechaFin";
-            this.LblFechaFin.Size = new System.Drawing.Size(56, 15);
+            this.LblFechaFin.Size = new System.Drawing.Size(61, 15);
             this.LblFechaFin.TabIndex = 9;
             this.LblFechaFin.Text = "Fecha Fin";
             // 
@@ -195,9 +198,9 @@
             this.LblDatosLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblDatosLlamada.AutoSize = true;
             this.LblDatosLlamada.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDatosLlamada.Location = new System.Drawing.Point(577, 130);
+            this.LblDatosLlamada.Location = new System.Drawing.Point(536, 130);
             this.LblDatosLlamada.Name = "LblDatosLlamada";
-            this.LblDatosLlamada.Size = new System.Drawing.Size(160, 18);
+            this.LblDatosLlamada.Size = new System.Drawing.Size(121, 15);
             this.LblDatosLlamada.TabIndex = 10;
             this.LblDatosLlamada.Text = "Datos de la Llamada";
             // 
@@ -208,7 +211,7 @@
             this.LblLlamadas.Location = new System.Drawing.Point(21, 130);
             this.LblLlamadas.MaximumSize = new System.Drawing.Size(127, 15);
             this.LblLlamadas.Name = "LblLlamadas";
-            this.LblLlamadas.Size = new System.Drawing.Size(96, 15);
+            this.LblLlamadas.Size = new System.Drawing.Size(127, 15);
             this.LblLlamadas.TabIndex = 11;
             this.LblLlamadas.Text = "Llamadas Disponibles";
             // 
@@ -240,7 +243,7 @@
             this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnImprimir.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold);
             this.BtnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.BtnImprimir.Location = new System.Drawing.Point(579, 512);
+            this.BtnImprimir.Location = new System.Drawing.Point(538, 521);
             this.BtnImprimir.Name = "BtnImprimir";
             this.BtnImprimir.Size = new System.Drawing.Size(110, 20);
             this.BtnImprimir.TabIndex = 13;
@@ -278,7 +281,7 @@
             this.LblPeriodo.Location = new System.Drawing.Point(21, 53);
             this.LblPeriodo.MaximumSize = new System.Drawing.Size(140, 16);
             this.LblPeriodo.Name = "LblPeriodo";
-            this.LblPeriodo.Size = new System.Drawing.Size(117, 16);
+            this.LblPeriodo.Size = new System.Drawing.Size(140, 16);
             this.LblPeriodo.TabIndex = 15;
             this.LblPeriodo.Text = "Seleccionar Periodo";
             // 
@@ -287,9 +290,9 @@
             this.LblDuracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblDuracion.AutoSize = true;
             this.LblDuracion.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDuracion.Location = new System.Drawing.Point(577, 213);
+            this.LblDuracion.Location = new System.Drawing.Point(536, 213);
             this.LblDuracion.Name = "LblDuracion";
-            this.LblDuracion.Size = new System.Drawing.Size(192, 18);
+            this.LblDuracion.Size = new System.Drawing.Size(145, 15);
             this.LblDuracion.TabIndex = 31;
             this.LblDuracion.Text = "Duracion de la llamada:";
             // 
@@ -298,9 +301,9 @@
             this.LblEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstado.Location = new System.Drawing.Point(577, 185);
+            this.LblEstado.Location = new System.Drawing.Point(536, 185);
             this.LblEstado.Name = "LblEstado";
-            this.LblEstado.Size = new System.Drawing.Size(176, 18);
+            this.LblEstado.Size = new System.Drawing.Size(133, 15);
             this.LblEstado.TabIndex = 30;
             this.LblEstado.Text = "Estado de la Llamada:";
             // 
@@ -309,9 +312,9 @@
             this.LblCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblCliente.AutoSize = true;
             this.LblCliente.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCliente.Location = new System.Drawing.Point(577, 154);
+            this.LblCliente.Location = new System.Drawing.Point(536, 162);
             this.LblCliente.Name = "LblCliente";
-            this.LblCliente.Size = new System.Drawing.Size(72, 18);
+            this.LblCliente.Size = new System.Drawing.Size(55, 15);
             this.LblCliente.TabIndex = 29;
             this.LblCliente.Text = "Cliente:";
             // 
@@ -320,42 +323,42 @@
             this.LblClienteDato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblClienteDato.AutoSize = true;
             this.LblClienteDato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblClienteDato.Location = new System.Drawing.Point(746, 154);
+            this.LblClienteDato.Location = new System.Drawing.Point(705, 162);
             this.LblClienteDato.Name = "LblClienteDato";
-            this.LblClienteDato.Size = new System.Drawing.Size(80, 18);
+            this.LblClienteDato.Size = new System.Drawing.Size(49, 15);
             this.LblClienteDato.TabIndex = 33;
-            this.LblClienteDato.Text = "Cliente 1";
+            this.LblClienteDato.Text = "Cliente";
             // 
             // LblEstadoDato
             // 
             this.LblEstadoDato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblEstadoDato.AutoSize = true;
             this.LblEstadoDato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstadoDato.Location = new System.Drawing.Point(746, 185);
+            this.LblEstadoDato.Location = new System.Drawing.Point(705, 185);
             this.LblEstadoDato.Name = "LblEstadoDato";
-            this.LblEstadoDato.Size = new System.Drawing.Size(88, 18);
+            this.LblEstadoDato.Size = new System.Drawing.Size(43, 15);
             this.LblEstadoDato.TabIndex = 34;
-            this.LblEstadoDato.Text = "Finalizada";
+            this.LblEstadoDato.Text = "Estado";
             // 
             // LblDuracionDato
             // 
             this.LblDuracionDato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblDuracionDato.AutoSize = true;
             this.LblDuracionDato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDuracionDato.Location = new System.Drawing.Point(746, 213);
+            this.LblDuracionDato.Location = new System.Drawing.Point(705, 213);
             this.LblDuracionDato.Name = "LblDuracionDato";
-            this.LblDuracionDato.Size = new System.Drawing.Size(80, 18);
+            this.LblDuracionDato.Size = new System.Drawing.Size(43, 15);
             this.LblDuracionDato.TabIndex = 35;
-            this.LblDuracionDato.Text = "35minutos";
+            this.LblDuracionDato.Text = "Tiempo";
             // 
             // LblPreguntasDatos
             // 
             this.LblPreguntasDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblPreguntasDatos.AutoSize = true;
             this.LblPreguntasDatos.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPreguntasDatos.Location = new System.Drawing.Point(577, 283);
+            this.LblPreguntasDatos.Location = new System.Drawing.Point(536, 283);
             this.LblPreguntasDatos.Name = "LblPreguntasDatos";
-            this.LblPreguntasDatos.Size = new System.Drawing.Size(64, 18);
+            this.LblPreguntasDatos.Size = new System.Drawing.Size(49, 15);
             this.LblPreguntasDatos.TabIndex = 36;
             this.LblPreguntasDatos.Text = "ejemplo";
             // 
@@ -364,31 +367,31 @@
             this.LblLinea2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLinea2.AutoSize = true;
             this.LblLinea2.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLinea2.Location = new System.Drawing.Point(576, 228);
+            this.LblLinea2.Location = new System.Drawing.Point(535, 228);
             this.LblLinea2.Name = "LblLinea2";
-            this.LblLinea2.Size = new System.Drawing.Size(336, 18);
+            this.LblLinea2.Size = new System.Drawing.Size(349, 15);
             this.LblLinea2.TabIndex = 38;
-            this.LblLinea2.Text = "_________________________________________";
+            this.LblLinea2.Text = "_________________________________________________________";
             // 
             // LblLinea1
             // 
             this.LblLinea1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLinea1.AutoSize = true;
             this.LblLinea1.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLinea1.Location = new System.Drawing.Point(576, 137);
+            this.LblLinea1.Location = new System.Drawing.Point(535, 137);
             this.LblLinea1.Name = "LblLinea1";
-            this.LblLinea1.Size = new System.Drawing.Size(336, 18);
+            this.LblLinea1.Size = new System.Drawing.Size(349, 15);
             this.LblLinea1.TabIndex = 9;
-            this.LblLinea1.Text = "_________________________________________";
+            this.LblLinea1.Text = "_________________________________________________________";
             // 
             // LblDatosEncuesta
             // 
             this.LblDatosEncuesta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblDatosEncuesta.AutoSize = true;
             this.LblDatosEncuesta.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDatosEncuesta.Location = new System.Drawing.Point(576, 246);
+            this.LblDatosEncuesta.Location = new System.Drawing.Point(535, 246);
             this.LblDatosEncuesta.Name = "LblDatosEncuesta";
-            this.LblDatosEncuesta.Size = new System.Drawing.Size(168, 18);
+            this.LblDatosEncuesta.Size = new System.Drawing.Size(127, 15);
             this.LblDatosEncuesta.TabIndex = 39;
             this.LblDatosEncuesta.Text = "Datos de la Encuesta";
             // 
@@ -397,22 +400,22 @@
             this.LblLinea3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLinea3.AutoSize = true;
             this.LblLinea3.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLinea3.Location = new System.Drawing.Point(576, 251);
+            this.LblLinea3.Location = new System.Drawing.Point(535, 251);
             this.LblLinea3.Name = "LblLinea3";
-            this.LblLinea3.Size = new System.Drawing.Size(336, 18);
+            this.LblLinea3.Size = new System.Drawing.Size(349, 15);
             this.LblLinea3.TabIndex = 49;
-            this.LblLinea3.Text = "_________________________________________";
+            this.LblLinea3.Text = "_________________________________________________________";
             // 
             // LblLinea4
             // 
             this.LblLinea4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLinea4.AutoSize = true;
             this.LblLinea4.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLinea4.Location = new System.Drawing.Point(576, 469);
+            this.LblLinea4.Location = new System.Drawing.Point(535, 469);
             this.LblLinea4.Name = "LblLinea4";
-            this.LblLinea4.Size = new System.Drawing.Size(336, 18);
+            this.LblLinea4.Size = new System.Drawing.Size(349, 15);
             this.LblLinea4.TabIndex = 50;
-            this.LblLinea4.Text = "_________________________________________";
+            this.LblLinea4.Text = "_________________________________________________________";
             // 
             // DGV
             // 
@@ -452,7 +455,7 @@
             this.Controls.Add(this.BtnCSV);
             this.Controls.Add(this.fechaFin);
             this.Controls.Add(this.fechaInicio);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PnlCE);
             this.Controls.Add(this.LblLinea1);
             this.Controls.Add(this.LblLinea3);
             this.Controls.Add(this.LblLinea4);
@@ -461,8 +464,8 @@
             this.Name = "ConsultarEncuesta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ConsultarEncuesta_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PnlCE.ResumeLayout(false);
+            this.PnlCE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -471,7 +474,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PnlCE;
         private System.Windows.Forms.DateTimePicker fechaInicio;
         private System.Windows.Forms.DateTimePicker fechaFin;
         private System.Windows.Forms.Button BtnCSV;
