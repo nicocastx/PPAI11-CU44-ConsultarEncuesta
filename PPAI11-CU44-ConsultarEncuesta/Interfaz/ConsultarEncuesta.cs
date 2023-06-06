@@ -21,7 +21,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
         {
             InitializeComponent();
             this.LlamadaSeleccionada = new List<String>();
-    }
+        }
 
         public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
 

@@ -10,10 +10,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
         public static List<Cliente> ListaClientes()
         {
             List<Cliente> listaClientes = new List<Cliente>();
-            Cliente clienteUno = new Cliente(Dni: 23123135, NombreCompleto: "Tito Pig", NroCelular: 351674823);
-            Cliente clienteDos = new Cliente(Dni: 23123133, NombreCompleto: "Kevin crack", NroCelular: 351658402);
-            Cliente clienteTres = new Cliente(Dni: 23123137, NombreCompleto: "Isma Gatto", NroCelular: 351090232);
-            Cliente clienteCuatro = new Cliente(Dni: 23123137, NombreCompleto: "Joaco Wachin", NroCelular: 351091398);
+            Cliente clienteUno = new Cliente(Dni: 23123135, NombreCompleto: "Martin Pig", NroCelular: 351674823);
+            Cliente clienteDos = new Cliente(Dni: 23123133, NombreCompleto: "Kevin Mas", NroCelular: 351658402);
+            Cliente clienteTres = new Cliente(Dni: 23123137, NombreCompleto: "Ismael Gattuso", NroCelular: 351090232);
+            Cliente clienteCuatro = new Cliente(Dni: 23123137, NombreCompleto: "Joaco Buco", NroCelular: 351091398);
             Cliente clienteCinco = new Cliente(Dni: 23123138, NombreCompleto: "Lucas Mendoza", NroCelular: 351674823);
             Cliente clienteSeis = new Cliente(Dni: 23123139, NombreCompleto: "Martina López", NroCelular: 351658402);
             Cliente clienteSiete = new Cliente(Dni: 23123140, NombreCompleto: "Carlos Rodríguez", NroCelular: 351090232);
