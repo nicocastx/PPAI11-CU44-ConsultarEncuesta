@@ -20,7 +20,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
         public ConsultarEncuesta()
         {
             InitializeComponent();
-        }
+            this.LlamadaSeleccionada = new List<String>();
+    }
 
         public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
 
@@ -63,7 +64,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
         private void BtnCSV_Click(object sender, EventArgs e)
         {
-            gestorCE.generarArchivoCSV();
+            gestorCE.generarArchivoCSV(LlamadaSeleccionada);
         }
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
@@ -92,7 +93,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
                 gestorCE.tomarOpcionLlamada(filaSeleccionada.DataBoundItem as Llamada);
 
-                LlamadaSeleccionada = gestorCE.mostrarDatosLlamada();
+                gestorCE.mostrarDatosLlamada(LlamadaSeleccionada);
 
                 mostrarDatosLlamadaSeleccionada();
             }
@@ -105,7 +106,6 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
             string nombreCliente = LlamadaSeleccionada[0];
             string estadoLlamada = LlamadaSeleccionada[1];
             string duracionLlamada = LlamadaSeleccionada[2];
-
 
             // Actualizar los controles en tu formulario con los datos obtenidos
             LblClienteDato.Text = nombreCliente;

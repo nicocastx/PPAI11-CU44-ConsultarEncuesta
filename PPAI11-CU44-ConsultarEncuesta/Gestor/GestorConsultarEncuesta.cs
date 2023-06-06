@@ -22,13 +22,11 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         public List<Encuesta> Encuestas { get; set; }
 
-        public List<String> LlamadaConPreguntas { get; set; }
 
         public GestorConsultarEncuesta(List<Llamada> llamadas, List<Encuesta> encuestas)
         {
             this.Llamadas = llamadas;
             this.Encuestas = encuestas;
-            LlamadaConPreguntas = new List<string>();
         }
 
         //metodo consultarEncuesta
@@ -89,7 +87,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             this.llamadaSeleccionada = llamadaSeleccionada;
         }
 
-        public List<String> mostrarDatosLlamada()
+        public List<String> mostrarDatosLlamada(List<string> LlamadaConPreguntas)
         {
             //metodo de llamada para mostrar sus atributos
             string nombreCliente = llamadaSeleccionada.getNombreClienteDeLlamada();
@@ -106,9 +104,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
             //Se crea una lista de strings que luego sera mostrada
 
-            this.LlamadaConPreguntas.Add(nombreCliente);
-            this.LlamadaConPreguntas.Add(estadoLlamada);
-            this.LlamadaConPreguntas.Add(duracionLlamada);
+            LlamadaConPreguntas.Clear();
+            LlamadaConPreguntas.Add(nombreCliente);
+            LlamadaConPreguntas.Add(estadoLlamada);
+            LlamadaConPreguntas.Add(duracionLlamada);
             
             //agrega todas las preguntas con su respuesta a la lista de strings
             for (int j = 0; j < listaPreguntas.Count; j++)
@@ -121,7 +120,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             return LlamadaConPreguntas;
         }
 
-        public void generarArchivoCSV()
+        public void generarArchivoCSV(List<String> LlamadaConPreguntas)
         {
             if(LlamadaConPreguntas.Count > 0)
             {
