@@ -15,6 +15,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 {
     public partial class ConsultarEncuesta : Form
     {
+        public List<String> LlamadaSeleccionada { get; set; }
 
         /*public GestorConsultarEncuesta()
         {
@@ -105,21 +106,21 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
                 gestorCE.tomarOpcionLlamada(filaSeleccionada.DataBoundItem as Llamada);
 
-                List<String> llamadaSeleccionada = gestorCE.mostrarDatosLlamada();
+                LlamadaSeleccionada = gestorCE.mostrarDatosLlamada();
 
                 // Acceder a los datos de la llamada seleccionada
-                string nombreCliente = llamadaSeleccionada[0];
-                string estadoLlamada = llamadaSeleccionada[1];
-                string duracionLlamada = llamadaSeleccionada[2];
+                string nombreCliente = LlamadaSeleccionada[0];
+                string estadoLlamada = LlamadaSeleccionada[1];
+                string duracionLlamada = LlamadaSeleccionada[2];
 
                 // Actualizar los controles en tu formulario con los datos obtenidos
                 LblClienteDato.Text = nombreCliente;
                 LblEstadoDato.Text = estadoLlamada;
                 LblDuracionDato.Text = duracionLlamada + " Minutos";
                 LblPreguntasDatos.Text = "";
-                for (int i = 3; i < llamadaSeleccionada.Count; i++)
+                for (int i = 3; i < LlamadaSeleccionada.Count; i++)
                 {
-                    LblPreguntasDatos.Text += $"{llamadaSeleccionada[i]}\n";
+                    LblPreguntasDatos.Text += $"{LlamadaSeleccionada[i]}\n";
                 }
             }
         }
