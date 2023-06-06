@@ -17,18 +17,6 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
     {
         public List<String> LlamadaSeleccionada { get; set; }
 
-        /*public GestorConsultarEncuesta()
-        {
-            this.fechaInicio = fechaInicio;
-            this.fechaFin = fechaFin;
-            this.esDePeriodo = esDePeriodo;
-            this.llamadasDePeriodo = llamadasDePeriodo;
-            this.nombreCliente = nombreCliente;
-            this.duracion = duracion;
-            this.respuestas = respuestas;
-            this.preguntas = preguntas;
-        }*/
-
         public ConsultarEncuesta()
         {
             InitializeComponent();
@@ -75,9 +63,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
         private void BtnCSV_Click(object sender, EventArgs e)
         {
-            EncuestaCSV encuestaCSV = new EncuestaCSV();
-            this.Hide();
-            encuestaCSV.Show();
+            gestorCE.generarArchivoCSV();
         }
 
         private void BtnFiltrar_Click(object sender, EventArgs e)

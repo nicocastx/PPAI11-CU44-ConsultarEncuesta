@@ -32,31 +32,16 @@
             this.BtnSalir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.LblRespuesta4Dato = new System.Windows.Forms.Label();
-            this.LblPregunta4Dato = new System.Windows.Forms.Label();
-            this.LblRespuesta4 = new System.Windows.Forms.Label();
-            this.LblPregunta4 = new System.Windows.Forms.Label();
-            this.LblRespuesta3Dato = new System.Windows.Forms.Label();
-            this.LblPregunta3Dato = new System.Windows.Forms.Label();
-            this.LblRespuesta3 = new System.Windows.Forms.Label();
-            this.LblPregunta3 = new System.Windows.Forms.Label();
-            this.LblRespuesta2Dato = new System.Windows.Forms.Label();
-            this.LblPregunta2Dato = new System.Windows.Forms.Label();
-            this.LblRespuesta2 = new System.Windows.Forms.Label();
-            this.LblPregunta2 = new System.Windows.Forms.Label();
-            this.LblRespuesta1Dato = new System.Windows.Forms.Label();
             this.LblDatosEncuesta = new System.Windows.Forms.Label();
             this.LblDatosLlamada = new System.Windows.Forms.Label();
             this.LblLinea2 = new System.Windows.Forms.Label();
-            this.LblPregunta1Dato = new System.Windows.Forms.Label();
+            this.LblPreguntasDatos = new System.Windows.Forms.Label();
             this.LblDuracionDato = new System.Windows.Forms.Label();
             this.LblEstadoDato = new System.Windows.Forms.Label();
             this.LblClienteDato = new System.Windows.Forms.Label();
             this.LblDuracion = new System.Windows.Forms.Label();
             this.LblEstado = new System.Windows.Forms.Label();
             this.LblCliente = new System.Windows.Forms.Label();
-            this.LblRespuesta1 = new System.Windows.Forms.Label();
-            this.LblPregunta1 = new System.Windows.Forms.Label();
             this.LblLinea1 = new System.Windows.Forms.Label();
             this.LblLinea3 = new System.Windows.Forms.Label();
             this.LblLinea4 = new System.Windows.Forms.Label();
@@ -118,151 +103,6 @@
             this.LblTitulo.TabIndex = 9;
             this.LblTitulo.Text = "Encuesta CSV";
             // 
-            // LblRespuesta4Dato
-            // 
-            this.LblRespuesta4Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta4Dato.AutoSize = true;
-            this.LblRespuesta4Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta4Dato.Location = new System.Drawing.Point(388, 407);
-            this.LblRespuesta4Dato.Name = "LblRespuesta4Dato";
-            this.LblRespuesta4Dato.Size = new System.Drawing.Size(13, 15);
-            this.LblRespuesta4Dato.TabIndex = 82;
-            this.LblRespuesta4Dato.Text = ".";
-            // 
-            // LblPregunta4Dato
-            // 
-            this.LblPregunta4Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta4Dato.AutoSize = true;
-            this.LblPregunta4Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta4Dato.Location = new System.Drawing.Point(388, 382);
-            this.LblPregunta4Dato.Name = "LblPregunta4Dato";
-            this.LblPregunta4Dato.Size = new System.Drawing.Size(13, 15);
-            this.LblPregunta4Dato.TabIndex = 81;
-            this.LblPregunta4Dato.Text = ".";
-            // 
-            // LblRespuesta4
-            // 
-            this.LblRespuesta4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta4.AutoSize = true;
-            this.LblRespuesta4.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.LblRespuesta4.Location = new System.Drawing.Point(285, 407);
-            this.LblRespuesta4.Name = "LblRespuesta4";
-            this.LblRespuesta4.Size = new System.Drawing.Size(67, 15);
-            this.LblRespuesta4.TabIndex = 80;
-            this.LblRespuesta4.Text = "Respuesta:";
-            // 
-            // LblPregunta4
-            // 
-            this.LblPregunta4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta4.AutoSize = true;
-            this.LblPregunta4.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta4.Location = new System.Drawing.Point(285, 382);
-            this.LblPregunta4.Name = "LblPregunta4";
-            this.LblPregunta4.Size = new System.Drawing.Size(61, 15);
-            this.LblPregunta4.TabIndex = 79;
-            this.LblPregunta4.Text = "Pregunta:";
-            // 
-            // LblRespuesta3Dato
-            // 
-            this.LblRespuesta3Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta3Dato.AutoSize = true;
-            this.LblRespuesta3Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta3Dato.Location = new System.Drawing.Point(388, 358);
-            this.LblRespuesta3Dato.Name = "LblRespuesta3Dato";
-            this.LblRespuesta3Dato.Size = new System.Drawing.Size(13, 15);
-            this.LblRespuesta3Dato.TabIndex = 76;
-            this.LblRespuesta3Dato.Text = ".";
-            // 
-            // LblPregunta3Dato
-            // 
-            this.LblPregunta3Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta3Dato.AutoSize = true;
-            this.LblPregunta3Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta3Dato.Location = new System.Drawing.Point(388, 333);
-            this.LblPregunta3Dato.Name = "LblPregunta3Dato";
-            this.LblPregunta3Dato.Size = new System.Drawing.Size(13, 15);
-            this.LblPregunta3Dato.TabIndex = 75;
-            this.LblPregunta3Dato.Text = ".";
-            // 
-            // LblRespuesta3
-            // 
-            this.LblRespuesta3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta3.AutoSize = true;
-            this.LblRespuesta3.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.LblRespuesta3.Location = new System.Drawing.Point(285, 358);
-            this.LblRespuesta3.Name = "LblRespuesta3";
-            this.LblRespuesta3.Size = new System.Drawing.Size(67, 15);
-            this.LblRespuesta3.TabIndex = 74;
-            this.LblRespuesta3.Text = "Respuesta:";
-            // 
-            // LblPregunta3
-            // 
-            this.LblPregunta3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta3.AutoSize = true;
-            this.LblPregunta3.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta3.Location = new System.Drawing.Point(285, 333);
-            this.LblPregunta3.Name = "LblPregunta3";
-            this.LblPregunta3.Size = new System.Drawing.Size(61, 15);
-            this.LblPregunta3.TabIndex = 73;
-            this.LblPregunta3.Text = "Pregunta:";
-            // 
-            // LblRespuesta2Dato
-            // 
-            this.LblRespuesta2Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta2Dato.AutoSize = true;
-            this.LblRespuesta2Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta2Dato.Location = new System.Drawing.Point(388, 308);
-            this.LblRespuesta2Dato.Name = "LblRespuesta2Dato";
-            this.LblRespuesta2Dato.Size = new System.Drawing.Size(13, 15);
-            this.LblRespuesta2Dato.TabIndex = 72;
-            this.LblRespuesta2Dato.Text = ".";
-            // 
-            // LblPregunta2Dato
-            // 
-            this.LblPregunta2Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta2Dato.AutoSize = true;
-            this.LblPregunta2Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta2Dato.Location = new System.Drawing.Point(388, 283);
-            this.LblPregunta2Dato.Name = "LblPregunta2Dato";
-            this.LblPregunta2Dato.Size = new System.Drawing.Size(13, 15);
-            this.LblPregunta2Dato.TabIndex = 71;
-            this.LblPregunta2Dato.Text = ".";
-            // 
-            // LblRespuesta2
-            // 
-            this.LblRespuesta2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta2.AutoSize = true;
-            this.LblRespuesta2.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta2.Location = new System.Drawing.Point(285, 308);
-            this.LblRespuesta2.Name = "LblRespuesta2";
-            this.LblRespuesta2.Size = new System.Drawing.Size(67, 15);
-            this.LblRespuesta2.TabIndex = 70;
-            this.LblRespuesta2.Text = "Respuesta:";
-            // 
-            // LblPregunta2
-            // 
-            this.LblPregunta2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta2.AutoSize = true;
-            this.LblPregunta2.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta2.Location = new System.Drawing.Point(285, 283);
-            this.LblPregunta2.Name = "LblPregunta2";
-            this.LblPregunta2.Size = new System.Drawing.Size(61, 15);
-            this.LblPregunta2.TabIndex = 69;
-            this.LblPregunta2.Text = "Pregunta:";
-            // 
-            // LblRespuesta1Dato
-            // 
-            this.LblRespuesta1Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta1Dato.AutoSize = true;
-            this.LblRespuesta1Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta1Dato.Location = new System.Drawing.Point(388, 258);
-            this.LblRespuesta1Dato.Name = "LblRespuesta1Dato";
-            this.LblRespuesta1Dato.Size = new System.Drawing.Size(55, 15);
-            this.LblRespuesta1Dato.TabIndex = 68;
-            this.LblRespuesta1Dato.Text = "02/05/99";
-            // 
             // LblDatosEncuesta
             // 
             this.LblDatosEncuesta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -296,16 +136,16 @@
             this.LblLinea2.TabIndex = 66;
             this.LblLinea2.Text = "_________________________________________";
             // 
-            // LblPregunta1Dato
+            // LblPreguntasDatos
             // 
-            this.LblPregunta1Dato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta1Dato.AutoSize = true;
-            this.LblPregunta1Dato.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta1Dato.Location = new System.Drawing.Point(388, 233);
-            this.LblPregunta1Dato.Name = "LblPregunta1Dato";
-            this.LblPregunta1Dato.Size = new System.Drawing.Size(127, 15);
-            this.LblPregunta1Dato.TabIndex = 65;
-            this.LblPregunta1Dato.Text = "Fecha de nacimiento?";
+            this.LblPreguntasDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblPreguntasDatos.AutoSize = true;
+            this.LblPreguntasDatos.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPreguntasDatos.Location = new System.Drawing.Point(285, 233);
+            this.LblPreguntasDatos.Name = "LblPreguntasDatos";
+            this.LblPreguntasDatos.Size = new System.Drawing.Size(91, 15);
+            this.LblPreguntasDatos.TabIndex = 65;
+            this.LblPreguntasDatos.Text = "Kevin Dictador";
             // 
             // LblDuracionDato
             // 
@@ -373,28 +213,6 @@
             this.LblCliente.TabIndex = 59;
             this.LblCliente.Text = "Cliente:";
             // 
-            // LblRespuesta1
-            // 
-            this.LblRespuesta1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblRespuesta1.AutoSize = true;
-            this.LblRespuesta1.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRespuesta1.Location = new System.Drawing.Point(285, 258);
-            this.LblRespuesta1.Name = "LblRespuesta1";
-            this.LblRespuesta1.Size = new System.Drawing.Size(67, 15);
-            this.LblRespuesta1.TabIndex = 58;
-            this.LblRespuesta1.Text = "Respuesta:";
-            // 
-            // LblPregunta1
-            // 
-            this.LblPregunta1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblPregunta1.AutoSize = true;
-            this.LblPregunta1.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPregunta1.Location = new System.Drawing.Point(285, 233);
-            this.LblPregunta1.Name = "LblPregunta1";
-            this.LblPregunta1.Size = new System.Drawing.Size(61, 15);
-            this.LblPregunta1.TabIndex = 57;
-            this.LblPregunta1.Text = "Pregunta:";
-            // 
             // LblLinea1
             // 
             this.LblLinea1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -434,31 +252,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(816, 490);
-            this.Controls.Add(this.LblRespuesta4Dato);
-            this.Controls.Add(this.LblPregunta4Dato);
-            this.Controls.Add(this.LblRespuesta4);
-            this.Controls.Add(this.LblPregunta4);
-            this.Controls.Add(this.LblRespuesta3Dato);
-            this.Controls.Add(this.LblPregunta3Dato);
-            this.Controls.Add(this.LblRespuesta3);
-            this.Controls.Add(this.LblPregunta3);
-            this.Controls.Add(this.LblRespuesta2Dato);
-            this.Controls.Add(this.LblPregunta2Dato);
-            this.Controls.Add(this.LblRespuesta2);
-            this.Controls.Add(this.LblPregunta2);
-            this.Controls.Add(this.LblRespuesta1Dato);
             this.Controls.Add(this.LblDatosEncuesta);
             this.Controls.Add(this.LblDatosLlamada);
             this.Controls.Add(this.LblLinea2);
-            this.Controls.Add(this.LblPregunta1Dato);
+            this.Controls.Add(this.LblPreguntasDatos);
             this.Controls.Add(this.LblDuracionDato);
             this.Controls.Add(this.LblEstadoDato);
             this.Controls.Add(this.LblClienteDato);
             this.Controls.Add(this.LblDuracion);
             this.Controls.Add(this.LblEstado);
             this.Controls.Add(this.LblCliente);
-            this.Controls.Add(this.LblRespuesta1);
-            this.Controls.Add(this.LblPregunta1);
             this.Controls.Add(this.LblLinea1);
             this.Controls.Add(this.LblLinea3);
             this.Controls.Add(this.LblLinea4);
@@ -467,6 +270,7 @@
             this.Name = "EncuestaCSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EncuestaCSV";
+            this.Load += new System.EventHandler(this.EncuestaCSV_Load);
             this.PnlCSV.ResumeLayout(false);
             this.PnlCSV.PerformLayout();
             this.ResumeLayout(false);
@@ -480,31 +284,16 @@
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblTitulo;
-        private System.Windows.Forms.Label LblRespuesta4Dato;
-        private System.Windows.Forms.Label LblPregunta4Dato;
-        private System.Windows.Forms.Label LblRespuesta4;
-        private System.Windows.Forms.Label LblPregunta4;
-        private System.Windows.Forms.Label LblRespuesta3Dato;
-        private System.Windows.Forms.Label LblPregunta3Dato;
-        private System.Windows.Forms.Label LblRespuesta3;
-        private System.Windows.Forms.Label LblPregunta3;
-        private System.Windows.Forms.Label LblRespuesta2Dato;
-        private System.Windows.Forms.Label LblPregunta2Dato;
-        private System.Windows.Forms.Label LblRespuesta2;
-        private System.Windows.Forms.Label LblPregunta2;
-        private System.Windows.Forms.Label LblRespuesta1Dato;
         private System.Windows.Forms.Label LblDatosEncuesta;
         private System.Windows.Forms.Label LblDatosLlamada;
         private System.Windows.Forms.Label LblLinea2;
-        private System.Windows.Forms.Label LblPregunta1Dato;
+        private System.Windows.Forms.Label LblPreguntasDatos;
         private System.Windows.Forms.Label LblDuracionDato;
         private System.Windows.Forms.Label LblEstadoDato;
         private System.Windows.Forms.Label LblClienteDato;
         private System.Windows.Forms.Label LblDuracion;
         private System.Windows.Forms.Label LblEstado;
         private System.Windows.Forms.Label LblCliente;
-        private System.Windows.Forms.Label LblRespuesta1;
-        private System.Windows.Forms.Label LblPregunta1;
         private System.Windows.Forms.Label LblLinea1;
         private System.Windows.Forms.Label LblLinea3;
         private System.Windows.Forms.Label LblLinea4;

@@ -46,27 +46,6 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             return false;
         }
 
-        /*public int calcularDuracion()
-        {
-            DateTime fechaHoraInicio = new DateTime();
-            DateTime fechaHoraFin = new DateTime();
-            for (var i = 0; i < cambioEstado.Count; i++)
-            {
-                if (cambioEstado[i].esEstadoInicial())
-                {
-                    fechaHoraInicio = cambioEstado[i].FechaHoraInicio;
-                } else if (cambioEstado[i].esEstadoFinal())
-                {
-                    fechaHoraFin = cambioEstado[i].FechaHoraInicio;
-                }
-            }
-
-            TimeSpan diferencia = fechaHoraInicio.Subtract(fechaHoraFin);
-
-            int minutos = (int)diferencia.TotalMinutes;
-            return minutos;
-        }*/
-
         public int calcularDuracion()
         {
             DateTime fechaHoraInicio = DateTime.MinValue;

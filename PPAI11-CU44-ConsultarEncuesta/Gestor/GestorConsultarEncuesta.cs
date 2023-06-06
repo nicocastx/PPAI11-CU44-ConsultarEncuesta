@@ -23,26 +23,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         public List<Encuesta> Encuestas { get; set; }
 
-        /*public DateTime fechaInicio { get; set; }
-        public DateTime fechaFin { get; set; }
-        public bool esDePeriodo { get; set; }
-        public List<Llamada> llamadasDePeriodo { get; set; }
-        public string nombreCliente { get; set; }
-        public int duracion { get; set; }
-        public List<RespuestaPosible> respuestas { get; set; }
-        public List<Pregunta> preguntas { get; set; }
-
-        public GestorConsultarEncuesta()
-        {
-            this.fechaInicio = fechaInicio;
-            this.fechaFin = fechaFin;
-            this.esDePeriodo = esDePeriodo;
-            this.llamadasDePeriodo = llamadasDePeriodo;
-            this.nombreCliente = nombreCliente;
-            this.duracion = duracion;
-            this.respuestas = respuestas;
-            this.preguntas = preguntas;
-        }*/
+        public List<String> LlamadaCSV { get; set; }
 
         public GestorConsultarEncuesta(List<Llamada> llamadas, List<Encuesta> encuestas)
         {
@@ -132,18 +113,18 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
                 LlamadaConPreguntas.Add(listaPreguntas[j]);
                 LlamadaConPreguntas.Add(respuestasCliente[j].respuestaSeleccionada.valor.ToString());
             }
-
+            //debemos cambiar el valor de la respuesta seleccionada a SI NO o Satisfactorio, etc...
+            LlamadaCSV = LlamadaConPreguntas;
             return LlamadaConPreguntas;
-        }
-
-        public void tomarOpcionGenerarCSV()
-        {
-
         }
 
         public void generarArchivoCSV()
         {
-
+            //debemos validar si es uno
+            EncuestaCSV encuestaCSV = new EncuestaCSV();
+            encuestaCSV.LlamadaSeleccionada = LlamadaCSV;
+            ConsultarEncuesta.ActiveForm.Hide();
+            encuestaCSV.Show();
         }
 
         public void finCU()

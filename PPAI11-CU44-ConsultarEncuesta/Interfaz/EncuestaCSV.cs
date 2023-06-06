@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PPAI11_CU44_ConsultarEncuesta.Datos;
+using PPAI11_CU44_ConsultarEncuesta.Entidades;
+using PPAI11_CU44_ConsultarEncuesta.Gestor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,9 @@ namespace PPAI11_CU44_ConsultarEncuesta
 {
     public partial class EncuestaCSV : Form
     {
+        public List<String> LlamadaSeleccionada { get; set; }
+        public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
+
         public EncuestaCSV()
         {
             InitializeComponent();
@@ -22,6 +28,30 @@ namespace PPAI11_CU44_ConsultarEncuesta
             Environment.Exit(1);
         }
 
+        public void generarArchivo()
+        {
+            // Acceder a los datos de la llamada seleccionada
+            string nombreCliente = LlamadaSeleccionada[0];
+            string estadoLlamada = LlamadaSeleccionada[1];
+            string duracionLlamada = LlamadaSeleccionada[2];
+
+            // Actualizar los controles en tu formulario con los datos obtenidos
+            LblClienteDato.Text = nombreCliente;
+            LblEstadoDato.Text = estadoLlamada;
+            LblDuracionDato.Text = duracionLlamada + " Minutos";
+            LblPreguntasDatos.Text = "";
+            for (int i = 3; i < LlamadaSeleccionada.Count; i++)
+            {
+                LblPreguntasDatos.Text += $"{LlamadaSeleccionada[i]}\n";
+            }
+        }
+
+
+        private void EncuestaCSV_Load(object sender, EventArgs e)
+        {
+            generarArchivo();
+        }
+
         int m, mx, my;
         private void titleBar_MouseDown(object sender, MouseEventArgs e)
         {
@@ -30,7 +60,6 @@ namespace PPAI11_CU44_ConsultarEncuesta
             my = e.Y;
 
         }
-
 
         private void titleBar_MouseMove(object sender, MouseEventArgs e)
         {
