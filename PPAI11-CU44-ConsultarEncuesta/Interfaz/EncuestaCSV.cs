@@ -57,6 +57,7 @@ namespace PPAI11_CU44_ConsultarEncuesta
             this.ClientSize = new Size(eWidth, eHeight);
         }
 
+        //metodo drag and drop
         int m, mx, my;
         private void titleBar_MouseDown(object sender, MouseEventArgs e)
         {

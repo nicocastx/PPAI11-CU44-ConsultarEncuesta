@@ -23,10 +23,12 @@ namespace PPAI11_CU44_ConsultarEncuesta
             Environment.Exit(1);
         }
 
+        //metodo opcionConsultarEncuesta
         private void BtnCSV_Click(object sender, EventArgs e)
         {
             ConsultarEncuesta consultarencuesta = new ConsultarEncuesta();
             this.Hide();
+            //metodo habilitarPantalla
             consultarencuesta.Show();
         }
 

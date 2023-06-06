@@ -12,7 +12,6 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 {
     public class GestorConsultarEncuesta
     {
-        static public List<DataGridViewRow> filaGrillaLlamadas = new List<DataGridViewRow>();
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
 
@@ -23,19 +22,19 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         public List<Encuesta> Encuestas { get; set; }
 
-        public List<String> LlamadaCSV { get; set; }
+        public List<String> LlamadaConPreguntas { get; set; }
 
         public GestorConsultarEncuesta(List<Llamada> llamadas, List<Encuesta> encuestas)
         {
             this.Llamadas = llamadas;
             this.Encuestas = encuestas;
+            LlamadaConPreguntas = new List<string>();
         }
 
+        //metodo consultarEncuesta
         public List<Llamada> consultarEncuesta(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
-            filaGrillaLlamadas.Clear();
 
-            //REVISAR SI ESTA MAL
             List<Llamada> LlamadasAMostrar = filtrarPorPeriodo(fechaInicioPeriodo, fechaFinPeriodo);
             LlamadasAMostrar = filtrarQueTenganEncuestas(LlamadasAMostrar);
 
@@ -56,6 +55,8 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             this.fechaFin = fechaFinIngresada;
         }
 
+        //metodo filtrar por periodo: toma de parametros la fecha inicio y la fecha fin y a la entidad de llamadas
+        //las filtra por el periodo seleccionado
         public List<Llamada> filtrarPorPeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
             List<Llamada> LlamadasFiltradas = new List<Llamada>();
@@ -69,6 +70,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             return LlamadasFiltradas;
         }
 
+        //filtrarQueTenganEncuestas: Toma las llamadas del periodo y las filtra por las que tengan respuestas existentes
         public List<Llamada> filtrarQueTenganEncuestas(List<Llamada> Llamadas)
         {
             List<Llamada> LlamadasFiltradasConEncuesta = new List<Llamada>();
@@ -89,42 +91,45 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         public List<String> mostrarDatosLlamada()
         {
+            //metodo de llamada para mostrar sus atributos
             string nombreCliente = llamadaSeleccionada.getNombreClienteDeLlamada();
             string estadoLlamada = llamadaSeleccionada.esUltimoEstado();
             string duracionLlamada = llamadaSeleccionada.duracion.ToString();
             List<RespuestaDeCliente> respuestasCliente = llamadaSeleccionada.getRespuestas();
             List<String> listaPreguntas = new List<string>();
-            
-            
+
+            //agrega todas las descripciones de las preguntas a un listado de preguntas 
             for (var i = 0; i < this.Encuestas[0].pregunta.Count; i++)
             {
                 listaPreguntas.Add(Encuestas[0].pregunta[i].descripcion);
             }
 
-            List<String> LlamadaConPreguntas = new List<string>
-            {
-                nombreCliente,
-                estadoLlamada,
-                duracionLlamada
-            };
+            //Se crea una lista de strings que luego sera mostrada
 
+            this.LlamadaConPreguntas.Add(nombreCliente);
+            this.LlamadaConPreguntas.Add(estadoLlamada);
+            this.LlamadaConPreguntas.Add(duracionLlamada);
+            
+            //agrega todas las preguntas con su respuesta a la lista de strings
             for (int j = 0; j < listaPreguntas.Count; j++)
             {
                 LlamadaConPreguntas.Add(listaPreguntas[j]);
                 LlamadaConPreguntas.Add(respuestasCliente[j].respuestaSeleccionada.valor.ToString());
             }
-            //debemos cambiar el valor de la respuesta seleccionada a SI NO o Satisfactorio, etc...
-            LlamadaCSV = LlamadaConPreguntas;
+
+            //se asigna la llamada con preguntas al atributo del gestor
             return LlamadaConPreguntas;
         }
 
         public void generarArchivoCSV()
         {
-            //debemos validar si es uno
-            EncuestaCSV encuestaCSV = new EncuestaCSV();
-            encuestaCSV.LlamadaSeleccionada = LlamadaCSV;
-            ConsultarEncuesta.ActiveForm.Hide();
-            encuestaCSV.Show();
+            if(LlamadaConPreguntas.Count > 0)
+            {
+                EncuestaCSV encuestaCSV = new EncuestaCSV();
+                encuestaCSV.LlamadaSeleccionada = LlamadaConPreguntas;
+                ConsultarEncuesta.ActiveForm.Hide();
+                encuestaCSV.Show();
+            };
         }
 
         public void finCU()

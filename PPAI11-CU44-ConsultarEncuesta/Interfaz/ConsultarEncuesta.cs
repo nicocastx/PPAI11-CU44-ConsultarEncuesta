@@ -94,20 +94,27 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
                 LlamadaSeleccionada = gestorCE.mostrarDatosLlamada();
 
-                // Acceder a los datos de la llamada seleccionada
-                string nombreCliente = LlamadaSeleccionada[0];
-                string estadoLlamada = LlamadaSeleccionada[1];
-                string duracionLlamada = LlamadaSeleccionada[2];
+                mostrarDatosLlamadaSeleccionada();
+            }
+        }
 
-                // Actualizar los controles en tu formulario con los datos obtenidos
-                LblClienteDato.Text = nombreCliente;
-                LblEstadoDato.Text = estadoLlamada;
-                LblDuracionDato.Text = duracionLlamada + " Minutos";
-                LblPreguntasDatos.Text = "";
-                for (int i = 3; i < LlamadaSeleccionada.Count; i++)
-                {
-                    LblPreguntasDatos.Text += $"{LlamadaSeleccionada[i]}\n";
-                }
+        //metodo mostrarDatosLlamadaSeleccionada: muestra
+        public void mostrarDatosLlamadaSeleccionada()
+        {
+            // Acceder a los datos de la llamada seleccionada
+            string nombreCliente = LlamadaSeleccionada[0];
+            string estadoLlamada = LlamadaSeleccionada[1];
+            string duracionLlamada = LlamadaSeleccionada[2];
+
+
+            // Actualizar los controles en tu formulario con los datos obtenidos
+            LblClienteDato.Text = nombreCliente;
+            LblEstadoDato.Text = estadoLlamada;
+            LblDuracionDato.Text = duracionLlamada + " Minutos";
+            LblPreguntasDatos.Text = "";
+            for (int i = 3; i < LlamadaSeleccionada.Count; i++)
+            {
+                LblPreguntasDatos.Text += $"{LlamadaSeleccionada[i]}\n";
             }
         }
 

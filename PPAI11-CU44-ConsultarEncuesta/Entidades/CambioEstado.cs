@@ -12,23 +12,13 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             this.Estado = Estado;
         }
 
-        /* GENTE ACA IMPLEMENTE LA FECHA CON EL TIPO DATETIME, NO SABIA CUAL IMPLEMENTAR
-        public DateTime fecha;
-        public CambioEstado()
-        {
-            fecha = DateTime.Now;
-        }
-
-        public DateTime fechaHoraInicio {
-            get { return fecha; }
-            set { fecha = value; }
-        }*/
-
+        //devuelve el nombre del estado
         public string getNombreEstado()
         {
             return this.Estado.nombre;
         }
 
+        //verifica si el nombre del estado es iniciada, devuelve true o false
         public bool esEstadoInicial()
         {
             if (this.Estado.esIniciada())
@@ -38,6 +28,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             return false;
         }
 
+        //verifica si el nombre del estado es finalizada, devuelve true o false
         public bool esEstadoFinal() {
             if (this.Estado.esFinalizada())
             {

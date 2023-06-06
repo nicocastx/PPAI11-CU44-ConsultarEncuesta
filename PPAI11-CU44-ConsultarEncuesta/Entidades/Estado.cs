@@ -9,6 +9,7 @@
             this.nombre = nombre;
         }
 
+        //verifica si el nombre es iniciada, devuelve un bool
         public bool esIniciada()
         {
             if (this.nombre == "Inicializada")
@@ -18,6 +19,7 @@
             return false;
         }
 
+        //verifica si el nombre es finalizada, devuelve un bool
         public bool esFinalizada()
         {
             if (this.nombre == "Finalizada")

@@ -37,6 +37,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             {
                 if (cambioEstado[i].esEstadoInicial())
                 {
+                    //accede al dato de la fechaHoraInicio por un get del cambio de estado que es inicializado
                     if (cambioEstado[i].FechaHoraInicio < fechaFinPeriodo && cambioEstado[i].FechaHoraInicio > fechaInicioPeriodo)
                     {
                         return true;
@@ -46,6 +47,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             return false;
         }
 
+        //calcular duracion: calcula entre la fecha inicio y la fecha de finalizacion de la llamada
         public int calcularDuracion()
         {
             DateTime fechaHoraInicio = DateTime.MinValue;
@@ -76,6 +78,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             return 0; // Valor predeterminado si no se puede calcular la duración
         }
 
+        //metodo para acceder al nombre del cliente asociado a la llamada
         public string getNombreClienteDeLlamada()
         {
             return this.cliente.NombreCompleto;
