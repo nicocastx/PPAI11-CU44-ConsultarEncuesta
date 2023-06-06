@@ -36,9 +36,7 @@ namespace PPAI11_CU44_ConsultarEncuesta
             string duracionLlamada = LlamadaSeleccionada[2];
 
             // Actualizar los controles en tu formulario con los datos obtenidos
-            LblClienteDato.Text = nombreCliente;
-            LblEstadoDato.Text = estadoLlamada;
-            LblDuracionDato.Text = duracionLlamada + " Minutos";
+            LblDato.Text = nombreCliente+ ", " + estadoLlamada +", " + duracionLlamada + " Minutos";
             LblPreguntasDatos.Text = "";
             for (int i = 3; i < LlamadaSeleccionada.Count; i++)
             {
@@ -50,6 +48,13 @@ namespace PPAI11_CU44_ConsultarEncuesta
         private void EncuestaCSV_Load(object sender, EventArgs e)
         {
             generarArchivo();
+            // Calcular el tamaño necesario para mostrar completamente el control LblPreguntasDatos
+            int padding = 10; // Espacio adicional para un mejor aspecto visual
+            int eWidth = LblPreguntasDatos.Right + padding;
+            int eHeight = LblPreguntasDatos.Bottom + padding;
+
+            // Establecer el tamaño del formulario
+            this.ClientSize = new Size(eWidth, eHeight);
         }
 
         int m, mx, my;
