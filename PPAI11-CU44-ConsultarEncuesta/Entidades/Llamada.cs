@@ -17,7 +17,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         public List<CambioEstado> cambioEstado { get; set; }
         public Cliente cliente { get; set; }
 
-        /*Constructor */
+        /*Constructor*/
         public Llamada(string descripcionOperador, string detalleAccionRequerida, bool encuestaEnviada, string observacionAuditor, List<RespuestaDeCliente> respuestasDeCliente, List<CambioEstado> cambioEstado, Cliente cliente)
         {
             this.descripcionOperador = descripcionOperador;
@@ -30,7 +30,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
             this.cliente = cliente;
         }
 
-        //!Verificar ESDEPERIODO, DEVUELVE TRUE O FALSE
+        //!ESDEPERIODO, DEVUELVE TRUE O FALSE
         public bool EsDePeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
         {
             for (var i = 0; i < cambioEstado.Count; i++)

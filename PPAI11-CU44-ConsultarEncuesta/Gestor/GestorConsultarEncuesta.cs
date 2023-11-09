@@ -86,7 +86,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         {
             this.llamadaSeleccionada = llamadaSeleccionada;
         }
-
+        
         public List<String> mostrarDatosLlamada(List<string> LlamadaConPreguntas)
         {
             //metodo de llamada para mostrar sus atributos

@@ -85,11 +85,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow filaSeleccionada = DGV.Rows[e.RowIndex];
-
-                // Obtener el estado de la llamada
-
                 // Obtener la llamada seleccionada
-                //Llamada llamadaSeleccionada = filaSeleccionada.DataBoundItem as Llamada;
 
                 gestorCE.tomarOpcionLlamada(filaSeleccionada.DataBoundItem as Llamada);
 
@@ -99,7 +95,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
             }
         }
 
-        //metodo mostrarDatosLlamadaSeleccionada: muestra
+        //metodo mostrarDatosLlamadaSeleccionada: muestra los datos de la llamada elegida por el actor
         public void mostrarDatosLlamadaSeleccionada()
         {
             // Acceder a los datos de la llamada seleccionada
@@ -118,6 +114,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
             }
         }
 
+        //funcion para drag and drop
         int m, mx, my;
         private void titleBar_MouseDown(object sender, MouseEventArgs e)
         {

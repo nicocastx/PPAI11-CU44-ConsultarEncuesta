@@ -16,7 +16,6 @@ namespace PPAI11_CU44_ConsultarEncuesta
     public partial class EncuestaCSV : Form
     {
         public List<String> LlamadaSeleccionada { get; set; }
-        public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
 
         public EncuestaCSV()
         {
