@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Modelos\CambioEstadoModel.cs" />
+    <Compile Include="Datos\Modelos\EncuestaModelo.cs" />
     <Compile Include="Datos\Modelos\EstadoModel.cs" />
     <Compile Include="Datos\RepositorioBD.cs" />
     <Compile Include="Interfaz\ConsultarEncuesta.cs">
