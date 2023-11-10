@@ -101,7 +101,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             //agrega todas las descripciones de las preguntas a un listado de preguntas 
             for (var i = 0; i < this.Encuestas[0].pregunta.Count; i++)
             {
-                listaPreguntas.Add(Encuestas[0].pregunta[i].descripcion);
+                listaPreguntas.Add(Encuestas[0].pregunta[i].pregunta);
             }
 
             //Se crea una lista de strings que luego sera mostrada

@@ -4,20 +4,20 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
 {
     public class Pregunta
     {
-        public string descripcion { get; set; }
+        public string pregunta { get; set; }
 
         public List<RespuestaPosible> respuesta { get; set; }
 
         //Constructor tito gato
         public Pregunta(string descripcion, List<RespuestaPosible> respuestaPosible)
         {
-            this.descripcion = descripcion;
+            this.pregunta = descripcion;
             this.respuesta = respuestaPosible;
         }
 
-        public string getDescripcion()
+        public string getPregunta()
         {
-            return this.descripcion;
+            return this.pregunta;
         }
 
         public List<RespuestaPosible> getRespuestasPosibles()

@@ -31,14 +31,14 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         }
 
         //!ESDEPERIODO, DEVUELVE TRUE O FALSE
-        public bool EsDePeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
+        public bool EsDePeriodo(DateTime fechaInicio, DateTime fechaFin)
         {
             for (var i = 0; i < cambioEstado.Count; i++)
             {
                 if (cambioEstado[i].esEstadoInicial())
                 {
                     //accede al dato de la fechaHoraInicio por un get del cambio de estado que es inicializado
-                    if (cambioEstado[i].FechaHoraInicio < fechaFinPeriodo && cambioEstado[i].FechaHoraInicio > fechaInicioPeriodo)
+                    if (cambioEstado[i].FechaHoraInicio < fechaFin && cambioEstado[i].FechaHoraInicio > fechaInicio)
                     {
                         return true;
                     }
