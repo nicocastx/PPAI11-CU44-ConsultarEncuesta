@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datos\Repositorio.cs" />
+    <Compile Include="Datos\Modelos\CambioEstadoModel.cs" />
+    <Compile Include="Datos\Modelos\EstadoModel.cs" />
+    <Compile Include="Datos\RepositorioBD.cs" />
     <Compile Include="Interfaz\ConsultarEncuesta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +111,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datos\Modelos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icon_encuesta.png" />
   </ItemGroup>

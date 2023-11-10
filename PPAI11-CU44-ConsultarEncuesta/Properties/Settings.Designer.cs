@@ -26,10 +26,21 @@ namespace PPAI11_CU44_ConsultarEncuesta.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KEVINCASTILLOPC;Initial Catalog=PPAI11CU44DSI2023;User ID=sa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KEVINCASTILLOPC;Initial Catalog=PPAI11CU44DSI2023;Integrated Security" +
+            "=True")]
         public string PPAI11CU44DSI2023ConnectionString {
             get {
                 return ((string)(this["PPAI11CU44DSI2023ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KEVINCASTILLOPC;Initial Catalog=PPAI11CU44DSI2023;User ID=sa")]
+        public string PPAI11CU44DSI2023ConnectionString1 {
+            get {
+                return ((string)(this["PPAI11CU44DSI2023ConnectionString1"]));
             }
         }
     }

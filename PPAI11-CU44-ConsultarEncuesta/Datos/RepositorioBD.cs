@@ -20,8 +20,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
         public RepositorioBD()
         {
             //con este metodo, se abre la conexion a la BD, modificar de manera local
-            this.cadenaConexion = "Data Source=KEVINCASTILLOPC;Initial Catalog=PPAI11CU44DSI2023;Integrated Security=True";
-            this.conn = new SqlConnection(this.cadenaConexion);
+            this.cadenaConexion = "Data Source=KEVINCASTILLOPC;Initial Catalog=PPAI11CU44DSI2023;User Id=sa;Password=qwerty654321;";
+            this.conn = new SqlConnection();
+            this.comando = new SqlCommand();
+            conn.ConnectionString= this.cadenaConexion;
         }
 
         public void BeginTransaction()

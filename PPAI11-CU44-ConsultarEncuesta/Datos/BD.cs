@@ -145,7 +145,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             //Cambios de estado para llamada 4
             CambioEstado cambioestado4I = new CambioEstado(FechaHoraInicio: new DateTime(2023, 2, 20, 16, 10, 0), Estado: ListaEstados()[0]);
             CambioEstado cambioestado4F = new CambioEstado(FechaHoraInicio: new DateTime(2023, 2, 20, 16, 18, 0), Estado: ListaEstados()[1]);
-            //Cambios de estado para llamada 5
+            //Cambios de estado para llamada 5 - LLEVADO A BD
             CambioEstado cambioestado5I = new CambioEstado(FechaHoraInicio: new DateTime(2021, 1, 15, 9, 30, 0), Estado: ListaEstados()[0]);
             CambioEstado cambioestado5F = new CambioEstado(FechaHoraInicio: new DateTime(2021, 1, 15, 9, 42, 0), Estado: ListaEstados()[1]);
             //Cambios de estado para llamada 6
@@ -175,6 +175,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
             cambioEstados3.Add(cambioestado3F);
             cambioEstados4.Add(cambioestado4I);
             cambioEstados4.Add(cambioestado4F);
+            //LLEVADOS A BD
             cambioEstados5.Add(cambioestado5I);
             cambioEstados5.Add(cambioestado5F);
             cambioEstados6.Add(cambioestado6I);
@@ -330,6 +331,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos
                 cliente: ListaClientes()[3]
                 );
 
+            //LLEVADA A BD
             Llamada llamada5 = new Llamada(
                 descripcionOperador: "El operador brinda atención al cliente de manera amable y" +
                 " profesional, ofreciendo soluciones y resolviendo consultas con eficiencia.",

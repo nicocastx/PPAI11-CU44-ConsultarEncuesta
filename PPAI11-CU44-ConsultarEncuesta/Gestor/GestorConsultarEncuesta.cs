@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PPAI11_CU44_ConsultarEncuesta.Datos.Modelos;
+using System.Diagnostics;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 {
