@@ -6,7 +6,6 @@
         public string NombreCompleto { get; set; }
         public int NroCelular { get; set; }
 
-        public Cliente() { }
         public Cliente(int Dni, string NombreCompleto, int NroCelular)
         {
             this.Dni = Dni;

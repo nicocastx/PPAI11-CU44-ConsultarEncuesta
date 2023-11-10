@@ -28,5 +28,15 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos.Modelos
 
             return listaRespuestas;
         }
+
+        public RespuestaPosible traerRespuestaPosible(int id)
+        {
+            DataTable dt = repo.Ejecutar($"SELECT * FROM {tabla} WHERE id = {id}");
+            DataRow dr = dt.Rows[0];
+
+            RespuestaPosible rpElegida = new RespuestaPosible(dr.Field<String>("descripcion"), dr.Field<int>("valor"));
+
+            return rpElegida;
+        }
     }
 }

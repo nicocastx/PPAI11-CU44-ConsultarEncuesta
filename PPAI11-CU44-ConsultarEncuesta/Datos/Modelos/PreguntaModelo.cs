@@ -20,7 +20,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos.Modelos
         {
             List<Pregunta> listaPreguntas = new List<Pregunta>();
 
-            DataTable dt = repo.Ejecutar($"SELECT * FROM {tabla} WHERE id = {idEncuesta}");
+            DataTable dt = repo.Ejecutar($"SELECT * FROM {tabla} WHERE idEncuesta = {idEncuesta}");
 
             foreach (DataRow dr in dt.Rows)
             {

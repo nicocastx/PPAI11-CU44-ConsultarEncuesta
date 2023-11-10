@@ -29,6 +29,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         {
             this.Llamadas = llamadas;
             this.Encuestas = encuestas;
+            var asd = (new LlamadaModelo()).mostrarLlamadas();
         }
 
         //metodo consultarEncuesta
