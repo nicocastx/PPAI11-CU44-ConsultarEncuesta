@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PPAI11_CU44_ConsultarEncuesta.Datos.Modelos;
 using System.Diagnostics;
+using PPAI11_CU44_ConsultarEncuesta.Entidades.Interfaces;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 {
@@ -24,6 +25,9 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         public List<Encuesta> Encuestas { get; set; }
 
+        //aplicacion del iterator
+        public Iiterador iteradorLlamada { get; set; }
+
 
         public GestorConsultarEncuesta(List<Llamada> llamadas, List<Encuesta> encuestas)
         {
@@ -32,17 +36,38 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         }
 
         //metodo consultarEncuesta
-        public List<Llamada> consultarEncuesta(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
+        public List<Llamada> consultarEncuesta()
         {
 
-            List<Llamada> LlamadasAMostrar = filtrarPorPeriodo(fechaInicioPeriodo, fechaFinPeriodo);
-            LlamadasAMostrar = filtrarQueTenganEncuestas(LlamadasAMostrar);
+            List<Llamada> LlamadasAMostrar = filtrarPorPeriodoYEncuesta();
+
 
             if(LlamadasAMostrar.Count == 0)
             {
                 MessageBox.Show("No hay llamadas en el periodo con encuestas respondidas!", "No hay llamadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             return LlamadasAMostrar;
+        }
+
+        private List<Llamada> filtrarPorPeriodoYEncuesta()
+        {
+            List<Llamada> llamadasFiltradas = new List<Llamada>();
+            this.iteradorLlamada = crearIterador(fechaInicio, fechaFin);
+            iteradorLlamada.primero();
+            while (iteradorLlamada.haTerminado())
+            {
+                if (iteradorLlamada.actual() != null)
+                {
+                    llamadasFiltradas.Add(iteradorLlamada.actual());
+                }
+                iteradorLlamada.siguiente();
+            }
+            return llamadasFiltradas;
+        }
+
+        private Iiterador crearIterador(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return new IteradorLlamada(fechaInicio, fechaFin);
         }
 
         public void tomarFechaInicio(DateTime fechaInicioIngresada)
@@ -62,7 +87,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             List<Llamada> LlamadasFiltradas = new List<Llamada>();
             for(var i = 0; i < this.Llamadas.Count; i++)
             {
-                if (Llamadas[i].EsDePeriodo(fechaInicioPeriodo, fechaFinPeriodo))
+                if (Llamadas[i].esDePeriodo(fechaInicioPeriodo, fechaFinPeriodo))
                 {
                     LlamadasFiltradas.Add(Llamadas[i]);
                 }
@@ -76,7 +101,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             List<Llamada> LlamadasFiltradasConEncuesta = new List<Llamada>();
             for (var i = 0; i < Llamadas.Count; i++)
             {
-                if (Llamadas[i].ExistenRespuestas())
+                if (Llamadas[i].existenRespuestas())
                 {
                     LlamadasFiltradasConEncuesta.Add(Llamadas[i]);
                 }
@@ -92,6 +117,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         public List<String> mostrarDatosLlamada(List<string> LlamadaConPreguntas)
         {
             //metodo de llamada para mostrar sus atributos
+            if (llamadaSeleccionada == null)
+            {
+                return new List<String>();
+            }
             string nombreCliente = llamadaSeleccionada.getNombreClienteDeLlamada();
             string estadoLlamada = llamadaSeleccionada.esUltimoEstado();
             string duracionLlamada = llamadaSeleccionada.duracion.ToString();

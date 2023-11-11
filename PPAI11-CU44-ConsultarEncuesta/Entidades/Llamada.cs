@@ -31,7 +31,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         }
 
         //!ESDEPERIODO, DEVUELVE TRUE O FALSE
-        public bool EsDePeriodo(DateTime fechaInicio, DateTime fechaFin)
+        public bool esDePeriodo(DateTime fechaInicio, DateTime fechaFin)
         {
             for (var i = 0; i < cambioEstado.Count; i++)
             {
@@ -91,7 +91,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Entidades
         }
 
         //Verificar EXISTENRESPUESTAS
-        public bool ExistenRespuestas()
+        public bool existenRespuestas()
         {
             if (this.respuestasDeEncuesta.Count <= 0)
             {

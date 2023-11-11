@@ -76,11 +76,18 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            DGV.DataSource = gestorCE.consultarEncuesta(fechaInicio.Value, fechaFin.Value);
+            gestorCE.tomarFechaInicio(fechaInicio.Value);
+            gestorCE.tomarFechaFin(fechaFin.Value);
+            DGV.DataSource = gestorCE.consultarEncuesta();
+           
 
             // Configurar el valor del nombre del cliente en la columna "Cliente"
             foreach (DataGridViewRow fila in DGV.Rows)
             {
+                if (fila.DataBoundItem== null)
+                {
+                    return;
+                }
                 Llamada llamada = fila.DataBoundItem as Llamada;
                 fila.Cells["Cliente"].Value = llamada.cliente.NombreCompleto;
             }
@@ -106,6 +113,10 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
         public void mostrarDatosLlamadaSeleccionada()
         {
             // Acceder a los datos de la llamada seleccionada
+            if (LlamadaSeleccionada.Count == 0)
+            {
+                return;
+            }
             string nombreCliente = LlamadaSeleccionada[0];
             string estadoLlamada = LlamadaSeleccionada[1];
             string duracionLlamada = LlamadaSeleccionada[2];

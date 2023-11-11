@@ -7,13 +7,13 @@ using System.Xml.Serialization;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Entidades.Interfaces
 {
-    internal interface Iiterador
+    public interface Iiterador
     {
 
-        void actual();
+        Llamada actual();
         bool haTerminado();
         void primero();
         void siguiente();
-        bool cumpleFiltros();
+        bool cumpleFiltros(Llamada llamada);
     }
 }

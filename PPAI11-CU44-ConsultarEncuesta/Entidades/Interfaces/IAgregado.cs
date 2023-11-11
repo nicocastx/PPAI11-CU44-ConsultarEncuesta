@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PPAI11_CU44_ConsultarEncuesta.Entidades.Interfaces
 {
-    internal interface IAgregado
+    public interface IAgregado
     {
-        Iiterador crearIterador(Object filtros);
+        Iiterador crearIterador(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo);
     }
 }
