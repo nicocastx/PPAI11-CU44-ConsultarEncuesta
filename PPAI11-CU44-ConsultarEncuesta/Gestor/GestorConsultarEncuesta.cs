@@ -20,18 +20,14 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
 
         public Llamada llamadaSeleccionada { get; set; }
 
-        //Lista de llamadas de BD
-        public List<Llamada> Llamadas { get; set; }
-
         public List<Encuesta> Encuestas { get; set; }
 
         //aplicacion del iterator
         public Iiterador iteradorLlamada { get; set; }
 
 
-        public GestorConsultarEncuesta(List<Llamada> llamadas, List<Encuesta> encuestas)
+        public GestorConsultarEncuesta(List<Encuesta> encuestas)
         {
-            this.Llamadas = llamadas;
             this.Encuestas = encuestas;
         }
 
@@ -49,6 +45,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
             return LlamadasAMostrar;
         }
 
+        //EMPIEZA ACA A ITERAR
         private List<Llamada> filtrarPorPeriodoYEncuesta()
         {
             List<Llamada> llamadasFiltradas = new List<Llamada>();
@@ -78,35 +75,6 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         public void tomarFechaFin(DateTime fechaFinIngresada)
         {
             this.fechaFin = fechaFinIngresada;
-        }
-
-        //metodo filtrar por periodo: toma de parametros la fecha inicio y la fecha fin y a la entidad de llamadas
-        //las filtra por el periodo seleccionado
-        public List<Llamada> filtrarPorPeriodo(DateTime fechaInicioPeriodo, DateTime fechaFinPeriodo)
-        {
-            List<Llamada> LlamadasFiltradas = new List<Llamada>();
-            for(var i = 0; i < this.Llamadas.Count; i++)
-            {
-                if (Llamadas[i].esDePeriodo(fechaInicioPeriodo, fechaFinPeriodo))
-                {
-                    LlamadasFiltradas.Add(Llamadas[i]);
-                }
-            }
-            return LlamadasFiltradas;
-        }
-
-        //filtrarQueTenganEncuestas: Toma las llamadas del periodo y las filtra por las que tengan respuestas existentes
-        public List<Llamada> filtrarQueTenganEncuestas(List<Llamada> Llamadas)
-        {
-            List<Llamada> LlamadasFiltradasConEncuesta = new List<Llamada>();
-            for (var i = 0; i < Llamadas.Count; i++)
-            {
-                if (Llamadas[i].existenRespuestas())
-                {
-                    LlamadasFiltradasConEncuesta.Add(Llamadas[i]);
-                }
-            }
-            return LlamadasFiltradasConEncuesta;
         }
 
         public void tomarOpcionLlamada(Llamada llamadaSeleccionada)

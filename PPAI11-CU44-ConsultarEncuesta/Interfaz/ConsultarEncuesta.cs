@@ -25,7 +25,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
         {
             modelLlamada = new LlamadaModelo();
             modelEncuesta = new EncuestaModelo();
-            gestorCE = new GestorConsultarEncuesta(modelLlamada.mostrarLlamadas(), modelEncuesta.TraerEncuestas());
+            gestorCE = new GestorConsultarEncuesta(modelEncuesta.TraerEncuestas());
             InitializeComponent();
             this.LlamadaSeleccionada = new List<String>();
         }
