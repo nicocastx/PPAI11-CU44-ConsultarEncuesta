@@ -1,4 +1,5 @@
 ﻿using PPAI11_CU44_ConsultarEncuesta.Datos;
+using PPAI11_CU44_ConsultarEncuesta.Datos.Modelos;
 using PPAI11_CU44_ConsultarEncuesta.Entidades;
 using PPAI11_CU44_ConsultarEncuesta.Gestor;
 using System;
@@ -16,14 +17,20 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
     public partial class ConsultarEncuesta : Form
     {
         public List<String> LlamadaSeleccionada { get; set; }
+        private static LlamadaModelo modelLlamada;
+        private static EncuestaModelo modelEncuesta;
+        public static GestorConsultarEncuesta gestorCE;
 
         public ConsultarEncuesta()
         {
+            modelLlamada = new LlamadaModelo();
+            modelEncuesta = new EncuestaModelo();
+            gestorCE = new GestorConsultarEncuesta(modelLlamada.mostrarLlamadas(), modelEncuesta.TraerEncuestas());
             InitializeComponent();
             this.LlamadaSeleccionada = new List<String>();
         }
 
-        public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
+        //public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
 
         private void ConsultarEncuesta_Load(object sender, EventArgs e)
         {

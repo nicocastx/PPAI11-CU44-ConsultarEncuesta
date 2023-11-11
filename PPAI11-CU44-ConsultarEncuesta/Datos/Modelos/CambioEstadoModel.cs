@@ -27,7 +27,7 @@ namespace PPAI11_CU44_ConsultarEncuesta.Datos.Modelos
             }
         }*/
 
-        public CambioEstado traerCambioEstado(int id)
+        public CambioEstado traerCambioEstadoPorId(int id)
         {
             DataTable dt = repo.Ejecutar($"SELECT * from CambioEstado WHERE id = {id}");
             Estado estadoAdjunto = modeloEstados.traerEstado(dt.Rows[0].Field<int>("idEstado"));
