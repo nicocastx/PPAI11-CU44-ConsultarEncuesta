@@ -25,44 +25,43 @@ namespace PPAI11_CU44_ConsultarEncuesta.Gestor
         //aplicacion del iterator
         public Iiterador iteradorLlamada { get; set; }
 
+        public List<Llamada> llamadasDePeriodoYRta { get; set; }
 
-        public GestorConsultarEncuesta(List<Encuesta> encuestas)
+
+        //Interaccion con la interfaz consultarEncuesta
+        public ConsultarEncuesta FormConsultar { get; set; }
+
+
+
+        public GestorConsultarEncuesta(List<Encuesta> encuestas, ConsultarEncuesta formularioEncuesta)
         {
             this.Encuestas = encuestas;
-        }
-
-        //metodo consultarEncuesta
-        public List<Llamada> consultarEncuesta()
-        {
-
-            List<Llamada> LlamadasAMostrar = filtrarPorPeriodoYEncuesta();
-
-
-            if(LlamadasAMostrar.Count == 0)
-            {
-                MessageBox.Show("No hay llamadas en el periodo con encuestas respondidas!", "No hay llamadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            return LlamadasAMostrar;
+            llamadasDePeriodoYRta = new List<Llamada>();
+            FormConsultar = formularioEncuesta;
         }
 
         //EMPIEZA ACA A ITERAR
-        private List<Llamada> filtrarPorPeriodoYEncuesta()
+        public void filtrarPorPeriodoYEncuesta()
         {
-            List<Llamada> llamadasFiltradas = new List<Llamada>();
-            this.iteradorLlamada = crearIterador(fechaInicio, fechaFin);
+            this.iteradorLlamada = crearIterador();
             iteradorLlamada.primero();
             while (iteradorLlamada.haTerminado())
             {
                 if (iteradorLlamada.actual() != null)
                 {
-                    llamadasFiltradas.Add(iteradorLlamada.actual());
+                    this.llamadasDePeriodoYRta.Add(iteradorLlamada.actual());
                 }
                 iteradorLlamada.siguiente();
             }
-            return llamadasFiltradas;
+
+            if (llamadasDePeriodoYRta.Count == 0)
+            {
+                MessageBox.Show("No hay llamadas en el periodo con encuestas respondidas!", "No hay llamadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            FormConsultar.mostrarLlamadasConPeriodoYEncuesta(llamadasDePeriodoYRta);
         }
 
-        private Iiterador crearIterador(DateTime fechaInicio, DateTime fechaFin)
+        private Iiterador crearIterador()
         {
             return new IteradorLlamada(fechaInicio, fechaFin);
         }

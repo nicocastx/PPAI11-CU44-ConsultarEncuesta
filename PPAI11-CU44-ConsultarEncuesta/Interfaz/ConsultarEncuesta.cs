@@ -17,20 +17,16 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
     public partial class ConsultarEncuesta : Form
     {
         public List<String> LlamadaSeleccionada { get; set; }
-        private static LlamadaModelo modelLlamada;
         private static EncuestaModelo modelEncuesta;
         public static GestorConsultarEncuesta gestorCE;
 
         public ConsultarEncuesta()
         {
-            modelLlamada = new LlamadaModelo();
             modelEncuesta = new EncuestaModelo();
-            gestorCE = new GestorConsultarEncuesta(modelEncuesta.TraerEncuestas());
+            gestorCE = new GestorConsultarEncuesta(modelEncuesta.TraerEncuestas(), this);
             InitializeComponent();
             this.LlamadaSeleccionada = new List<String>();
         }
-
-        //public static GestorConsultarEncuesta gestorCE = new GestorConsultarEncuesta(BD.ListaLlamadas(), BD.ListaEncuestas());
 
         private void ConsultarEncuesta_Load(object sender, EventArgs e)
         {
@@ -76,25 +72,26 @@ namespace PPAI11_CU44_ConsultarEncuesta.Interfaz
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            mostrarLlamadasConPeriodoYEncuesta();
+            gestorCE.tomarFechaInicio(fechaInicio.Value);
+            gestorCE.tomarFechaFin(fechaFin.Value);
+            gestorCE.filtrarPorPeriodoYEncuesta();          
+        }
 
+        //MOSTRAR LLAMADAS PERIODO Y ENCUESTA
+        public void mostrarLlamadasConPeriodoYEncuesta(List <Llamada> LlamadasAMostrar) 
+        {
+            DGV.DataSource = LlamadasAMostrar;
             // Configurar el valor del nombre del cliente en la columna "Cliente"
             foreach (DataGridViewRow fila in DGV.Rows)
             {
-                if (fila.DataBoundItem== null)
+                if (fila.DataBoundItem == null)
                 {
                     return;
                 }
                 Llamada llamada = fila.DataBoundItem as Llamada;
                 fila.Cells["Cliente"].Value = llamada.cliente.NombreCompleto;
             }
-        }
-
-        private void mostrarLlamadasConPeriodoYEncuesta()
-        {
-            gestorCE.tomarFechaInicio(fechaInicio.Value);
-            gestorCE.tomarFechaFin(fechaFin.Value);
-            DGV.DataSource = gestorCE.consultarEncuesta();
+            gestorCE.llamadasDePeriodoYRta = new List<Llamada>();
         }
 
         //solicitar Opcion Llamada
